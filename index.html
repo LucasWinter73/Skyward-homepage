@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Skyward Simulations</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			background: #000;
+			color: #f5f5f7;
+			line-height: 1.47059;
+			font-weight: 400;
+			letter-spacing: -0.022em;
+		}
+
+		.logo {
+			font-size: 21px;
+			font-weight: 600;
+			color: #f5f5f7;
+			letter-spacing: -0.05em;
+		}
+
+		.logo img {
+			height: 28px;
+			width: auto;
+		}
+
+		/* Navigation */
+		nav {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			background: rgba(0, 0, 0, 0.8);
+			backdrop-filter: saturate(180%) blur(20px);
+			z-index: 1000;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		}
+
+		.nav-container {
+			max-width: 980px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0 22px;
+			height: 44px;
+		}
+
+		.logo {
+			font-size: 21px;
+			font-weight: 600;
+			color: #f5f5f7;
+			letter-spacing: -0.05em;
+		}
+
+		.nav-links {
+			display: flex;
+			list-style: none;
+			gap: 0;
+		}
+
+		.nav-links li {
+			margin: 0 21px;
+		}
+
+		.nav-links a {
+			text-decoration: none;
+			color: rgba(245, 245, 247, 0.8);
+			font-size: 12px;
+			font-weight: 400;
+			transition: color 0.3s ease;
+			letter-spacing: -0.01em;
+		}
+
+		.nav-links a:hover,
+		.nav-links a.active {
+			color: #f5f5f7;
+		}
+
+		.hero {
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			padding: 0 22px;
+			background: 
+				linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(45, 45, 48, 0.8) 100%),
+				url('images/common/Background.png') center/cover no-repeat;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.hero-content {
+			max-width: 734px;
+			z-index: 2;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.hero h1 {
+			font-size: 80px;
+			line-height: 1.05;
+			font-weight: 600;
+			letter-spacing: -0.015em;
+			color: #f5f5f7;
+			margin-bottom: 16px;
+			animation: fadeInUp 1s ease-out;
+		}
+
+		.hero .subtitle {
+			font-size: 28px;
+			line-height: 1.1;
+			font-weight: 400;
+			color: rgba(245, 245, 247, 0.8);
+			margin-bottom: 24px;
+			animation: fadeInUp 1s ease-out 0.2s both;
+		}
+
+		.hero .description {
+			font-size: 21px;
+			line-height: 1.381;
+			font-weight: 400;
+			color: rgba(245, 245, 247, 0.6);
+			margin-bottom: 40px;
+			animation: fadeInUp 1s ease-out 0.4s both;
+		}
+
+		.cta-buttons {
+			display: flex;
+			gap: 20px;
+			justify-content: center;
+			flex-wrap: wrap;
+			animation: fadeInUp 1s ease-out 0.6s both;
+		}
+
+		.cta-primary {
+			background: #0071e3;
+			color: #fff;
+			padding: 12px 23px;
+			border-radius: 980px;
+			text-decoration: none;
+			font-size: 17px;
+			font-weight: 400;
+			transition: all 0.3s ease;
+			border: none;
+			cursor: pointer;
+		}
+
+		.cta-primary:hover {
+			background: #0077ed;
+			transform: scale(1.02);
+		}
+
+		.cta-secondary {
+			color: #0071e3;
+			padding: 12px 23px;
+			border: 1px solid #0071e3;
+			border-radius: 980px;
+			text-decoration: none;
+			font-size: 17px;
+			font-weight: 400;
+			transition: all 0.3s ease;
+			background: transparent;
+		}
+
+		.cta-secondary:hover {
+			background: rgba(0, 113, 227, 0.1);
+			transform: scale(1.02);
+		}
+
+		/* Sections */
+		.section {
+			display: none;
+			min-height: 100vh;
+			padding: 110px 22px 0;
+		}
+
+		.section.active {
+			display: block;
+			animation: fadeIn 0.5s ease-out;
+		}
+
+		/* Special case for hero section to ensure proper centering */
+		.hero.section {
+			display: none;
+			padding: 0 22px;
+		}
+
+		.hero.section.active {
+			display: flex;
+		}
+
+		.section-container {
+			max-width: 980px;
+			margin: 0 auto;
+		}
+
+		.section-hero {
+			text-align: center;
+			margin-bottom: 80px;
+		}
+
+		.section h2 {
+			font-size: 48px;
+			line-height: 1.083;
+			font-weight: 600;
+			letter-spacing: -0.003em;
+			color: #f5f5f7;
+			margin-bottom: 8px;
+		}
+
+		.section .section-subtitle {
+			font-size: 21px;
+			line-height: 1.381;
+			font-weight: 400;
+			color: rgba(245, 245, 247, 0.8);
+			max-width: 734px;
+			margin: 0 auto;
+		}
+
+		/* About Features */
+		.features-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 40px;
+			margin-top: 60px;
+		}
+
+		.feature-card {
+			text-align: left;
+			padding: 0;
+		}
+
+		.feature-card h3 {
+			font-size: 24px;
+			line-height: 1.167;
+			font-weight: 600;
+			color: #f5f5f7;
+			margin-bottom: 8px;
+			letter-spacing: 0.007em;
+		}
+
+		.feature-card p {
+			font-size: 17px;
+			line-height: 1.47;
+			color: rgba(245, 245, 247, 0.8);
+			font-weight: 400;
+		}
+
+		/* Hangar Section - Improved aircraft cards */
+		.aircraft-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 40px;
+			margin-top: 60px;
+		}
+
+		.aircraft-card {
+			background: rgba(255, 255, 255, 0.02);
+			border-radius: 18px;
+			overflow: hidden;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+			backdrop-filter: blur(20px);
+			cursor: pointer;
+			position: relative;
+		}
+
+		.aircraft-card:hover {
+			transform: translateY(-8px) scale(1.02);
+			border-color: #0071e3;
+			background: rgba(255, 255, 255, 0.06);
+			box-shadow: 0 20px 40px rgba(0, 113, 227, 0.15),
+			            0 0 0 1px rgba(0, 113, 227, 0.3);
+		}
+
+		.aircraft-card::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 2px;
+			background: linear-gradient(90deg, 
+			            transparent, 
+			            #0071e3, 
+			            transparent);
+			transform: translateX(-100%);
+			transition: transform 0.6s ease;
+		}
+
+		.aircraft-card:hover::before {
+			transform: translateX(100%);
+		}
+
+		.aircraft-image {
+			height: 200px;
+			background: linear-gradient(135deg, #1d1d1f 0%, #2d2d30 100%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			overflow: hidden;
+		}
+
+		.aircraft-image img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+		}
+
+		.aircraft-card:hover .aircraft-image img {
+			transform: scale(1.1);
+		}
+
+		.aircraft-placeholder {
+			width: 120px;
+			height: 80px;
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 14px;
+			color: rgba(245, 245, 247, 0.6);
+			font-weight: 400;
+			position: absolute;
+		}
+
+		.aircraft-info {
+			padding: 24px;
+			transition: all 0.3s ease;
+		}
+
+		.aircraft-card:hover .aircraft-info {
+			background: rgba(0, 113, 227, 0.03);
+		}
+
+		.aircraft-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-bottom: 12px;
+		}
+
+		.aircraft-info h3 {
+			font-size: 21px;
+			line-height: 1.19;
+			font-weight: 600;
+			color: #f5f5f7;
+			letter-spacing: 0.011em;
+			transition: color 0.3s ease;
+		}
+
+		.aircraft-card:hover .aircraft-info h3 {
+			color: #0071e3;
+		}
+
+		.aircraft-status {
+			font-size: 12px;
+			font-weight: 600;
+			padding: 4px 8px;
+			border-radius: 6px;
+			text-transform: uppercase;
+			letter-spacing: 0.06em;
+			transition: all 0.3s ease;
+		}
+
+		.status-development {
+			background: rgba(255, 159, 10, 0.2);
+			color: #ff9f0a;
+		}
+
+		.status-beta {
+			background: rgba(0, 122, 255, 0.2);
+			color: #007aff;
+		}
+
+		.status-released {
+			background: rgba(48, 209, 88, 0.2);
+			color: #30d158;
+		}
+
+		.aircraft-card:hover .aircraft-status {
+			transform: scale(1.05);
+		}
+
+		.aircraft-info p {
+			color: rgba(245, 245, 247, 0.8);
+			line-height: 1.47;
+			font-size: 17px;
+			font-weight: 400;
+		}
+
+		/* Contact Grid */
+		.contact-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+			gap: 40px;
+			margin-top: 60px;
+		}
+
+		.contact-card {
+			text-align: center;
+			padding: 40px 24px;
+			background: rgba(255, 255, 255, 0.02);
+			border-radius: 18px;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			transition: all 0.4s ease;
+		}
+
+		.contact-card:hover {
+			background: rgba(255, 255, 255, 0.04);
+			transform: translateY(-4px);
+		}
+
+		.contact-card h3 {
+			font-size: 21px;
+			line-height: 1.19;
+			font-weight: 600;
+			color: #f5f5f7;
+			margin-bottom: 8px;
+		}
+
+		.contact-card p {
+			font-size: 17px;
+			line-height: 1.47;
+			color: rgba(245, 245, 247, 0.8);
+		}
+
+		/* Footer */
+		.footer {
+			padding: 80px 22px 21px;
+			border-top: 1px solid rgba(255, 255, 255, 0.1);
+			margin-top: 100px;
+			text-align: center;
+		}
+
+		.footer p {
+			color: rgba(245, 245, 247, 0.6);
+			font-size: 12px;
+			line-height: 1.33;
+		}
+
+		/* Animations */
+		@keyframes fadeInUp {
+			from {
+				opacity: 0;
+				transform: translateY(30px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes fadeIn {
+			from { opacity: 0; }
+			to { opacity: 1; }
+		}
+
+		/* Responsive */
+		@media (max-width: 1068px) {
+			.nav-container {
+				max-width: 692px;
+			}
+			
+			.hero h1 {
+				font-size: 64px;
+			}
+			
+			.hero .subtitle {
+				font-size: 24px;
+			}
+			
+			.section h2 {
+				font-size: 40px;
+			}
+		}
+
+		@media (max-width: 734px) {
+			.nav-links li {
+				margin: 0 12px;
+			}
+			
+			.nav-links a {
+				font-size: 11px;
+			}
+			
+			.hero h1 {
+				font-size: 48px;
+			}
+			
+			.hero .subtitle {
+				font-size: 21px;
+			}
+			
+			.hero .description {
+				font-size: 17px;
+			}
+			
+			.section h2 {
+				font-size: 32px;
+			}
+			
+			.cta-buttons {
+				flex-direction: column;
+				align-items: center;
+			}
+			
+			.features-grid,
+			.aircraft-grid,
+			.contact-grid {
+				grid-template-columns: 1fr;
+				gap: 30px;
+			}
+		}
+
+		@media (max-width: 320px) {
+			.hero h1 {
+				font-size: 40px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<nav id="nav">
+		<div class="nav-container">
+			<div class="logo">
+				<img src="images/common/Logo.png" alt="Skyward Simulations" />
+			</div>
+			<ul class="nav-links">
+				<li><a href="#home" class="nav-link active">Home</a></li>
+				<li><a href="#about" class="nav-link">About</a></li>
+				<li><a href="#hangar" class="nav-link">Hangar</a></li>
+				<li><a href="#contact" class="nav-link">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Home Section -->
+	<section id="home" class="hero section active">
+		<div class="hero-content">
+			<h1>Skyward Simulations</h1>
+			<div class="subtitle">Precision flight simulation</div>
+			<div class="description">Crafting exceptional aircraft experiences for Microsoft Flight Simulator with uncompromising attention to detail.</div>
+			<div class="cta-buttons">
+				<a href="#hangar" class="cta-primary">View Aircraft</a>
+				<a href="#about" class="cta-secondary">Learn More</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- About Section -->
+	<section id="about" class="section">
+		<div class="section-container">
+			<div class="section-hero">
+				<h2>Built for realism</h2>
+				<div class="section-subtitle">Every aircraft is meticulously engineered with real-world data and cutting-edge simulation technology to deliver the most authentic flight experience possible.</div>
+			</div>
+			
+			<div class="features-grid">
+				<div class="feature-card">
+					<h3>Authentic Systems</h3>
+					<p>Every switch, gauge, and system is modeled after real aircraft specifications with unprecedented accuracy and attention to detail.</p>
+				</div>
+				<div class="feature-card">
+					<h3>Performance Focused</h3>
+					<p>Optimized for smooth performance across all hardware configurations while maintaining the highest visual and system fidelity.</p>
+				</div>
+				<div class="feature-card">
+					<h3>Immersive Experience</h3>
+					<p>From engine startup sequences to realistic flight dynamics, every moment in the cockpit feels authentic and engaging.</p>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<p>© 2024 Skyward Simulations. All rights reserved.</p>
+		</div>
+	</section>
+
+	<!-- Hangar Section -->
+	<section id="hangar" class="section">
+		<div class="section-container">
+			<div class="section-hero">
+				<h2>Our hangar</h2>
+				<div class="section-subtitle">A collection of meticulously crafted aircraft for Microsoft Flight Simulator, each representing our commitment to authenticity and excellence.</div>
+			</div>
+			
+			<div class="aircraft-grid">
+				<div class="aircraft-card">
+					<div class="aircraft-image">
+						<img src="images/aircraft/DA50/DA50_BG.jpg" alt="Diamond DA50rg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+						<div class="aircraft-placeholder" style="display:none;">Aircraft Image</div>
+					</div>
+					<div class="aircraft-info">
+						<div class="aircraft-header">
+							<h3>Diamond DA50 RG</h3>
+							<span class="aircraft-status status-released">Available</span>
+						</div>
+						<p>Our flagship general aviation aircraft featuring fully functional G1000 avionics, realistic flight dynamics, and photorealistic 4K textures. Sounds By Boris Audio Works and more. Perfect for training and cross-country flights.</p>
+					</div>
+				</div>
+				
+				<div class="aircraft-card">
+					<div class="aircraft-image">
+						<img src="images/aircraft/C680/C680_BG.png" alt="Cessna Citation C680 Sovereign+" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+						<div class="aircraft-placeholder" style="display:none;">Aircraft Image</div>
+					</div>
+					<div class="aircraft-info">
+						<div class="aircraft-header">
+							<h3>Cessna Citation C680 Sovereign+</h3>
+							<span class="aircraft-status status-beta">Beta</span>
+						</div>
+						<p>The latest addition to our fleet is the Cessna Citation C680 Sovereign+, featuring advanced avionics with the Garmin G5000 flightdeck. We're aiming for the most realistic private jet experience in Microsoft Flight Simulator. With detailed Systems including ACARS and CPDLC and the addition of over 170 individual electrical Circuits and respective Circuit breakers, we are confident in delivering an unparalleled simulation experience.</p>
+					</div>
+				</div>
+				
+				<div class="aircraft-card">
+					<div class="aircraft-image">
+						<img src="images/aircraft/C680A/C680A_BG.png" alt="Cessna C680A Latitude" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+						<div class="aircraft-placeholder" style="display:none;">Aircraft Image</div>
+					</div>
+					<div class="aircraft-info">
+						<div class="aircraft-header">
+							<h3>Cessna C680A Latitude</h3>
+							<span class="aircraft-status status-development">In Development</span>
+						</div>
+						<p>As Textron's successor for the Cessna Citation Sovereign series, the C680A Latitude aims to redefine business aviation with its spacious cabin, advanced technology, and superior performance. We expect a release in mid to late 2026 delivering similar, if not better experience compared to all our previous aircraft.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<p>© 2024 Skyward Simulations. All rights reserved.</p>
+		</div>
+	</section>
+
+	<!-- Contact Section -->
+	<section id="contact" class="section">
+		<div class="section-container">
+			<div class="section-hero">
+				<h2>Get in touch</h2>
+				<div class="section-subtitle">Questions about our aircraft or interested in our latest developments? We'd love to hear from you.</div>
+			</div>
+			
+			<div class="contact-grid">
+				<div class="contact-card">
+					<h3>Support</h3>
+					<p>Contact our technical support team for assistance with installations, troubleshooting, or product questions.</p>
+				</div>
+				<div class="contact-card">
+					<h3>Community</h3>
+					<p>Join our community forums to connect with other virtual pilots and share your flying experiences.</p>
+				</div>
+				<div class="contact-card">
+					<h3>Updates</h3>
+					<p>Stay informed about new releases, updates, and behind-the-scenes development insights.</p>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<p>© 2024 Skyward Simulations. All rights reserved.</p>
+		</div>
+	</section>
+
+	<script>
+		// Navigation functionality
+		const navLinks = document.querySelectorAll('.nav-link');
+		const sections = document.querySelectorAll('.section');
+
+		// Handle navigation clicks
+		navLinks.forEach(link => {
+			link.addEventListener('click', (e) => {
+				e.preventDefault();
+				const targetId = link.getAttribute('href').substring(1);
+				
+				// Update active nav link
+				navLinks.forEach(l => l.classList.remove('active'));
+				link.classList.add('active');
+				
+				// Show target section
+				sections.forEach(section => {
+					section.classList.remove('active');
+				});
+				document.getElementById(targetId).classList.add('active');
+			});
+		});
+
+		// Handle CTA button clicks
+		document.querySelectorAll('.cta-primary, .cta-secondary').forEach(button => {
+			button.addEventListener('click', (e) => {
+				e.preventDefault();
+				const targetId = button.getAttribute('href').substring(1);
+				
+				if (targetId) {
+					// Update nav
+					navLinks.forEach(l => l.classList.remove('active'));
+					document.querySelector(`[href="#${targetId}"]`).classList.add('active');
+					
+					// Show target section
+					sections.forEach(section => section.classList.remove('active'));
+					document.getElementById(targetId).classList.add('active');
+				}
+			});
+		});
+
+		// Animate elements on load
+		window.addEventListener('load', () => {
+			const cards = document.querySelectorAll('.feature-card, .aircraft-card, .contact-card');
+			cards.forEach((card, index) => {
+				setTimeout(() => {
+					card.style.animation = `fadeInUp 0.6s ease-out forwards`;
+				}, index * 100);
+			});
+		});
+	</script>
+</body>
+</html>

@@ -95,7 +95,7 @@
 			padding: 0 22px;
 			background: 
 				linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(45, 45, 48, 0.8) 100%),
-				url('images/aircraft/C680/C680_1.png') center/cover no-repeat fixed;
+				url('images/aircraft/C680/C680_1.png') center/cover no-repeat;
 			position: relative;
 			overflow: hidden;
 		}
@@ -314,24 +314,17 @@
 
 		/* Sections */
 		.section {
-			display: none;
 			min-height: 100vh;
 			padding: 110px 22px 0;
 		}
 
 		.section.active {
-			display: block;
 			animation: fadeIn 0.5s ease-out;
 		}
 
 		/* Special case for hero section to ensure proper centering */
 		.hero.section {
-			display: none;
 			padding: 0 22px;
-		}
-
-		.hero.section.active {
-			display: flex;
 		}
 
 		.section-container {
@@ -1057,21 +1050,22 @@
 		const navLinks = document.querySelectorAll('.nav-link');
 		const sections = document.querySelectorAll('.section');
 
-		// Handle navigation clicks
+		// Handle navigation clicks - smooth scroll to sections
 		navLinks.forEach(link => {
 			link.addEventListener('click', (e) => {
 				e.preventDefault();
 				const targetId = link.getAttribute('href').substring(1);
+				const targetSection = document.getElementById(targetId);
 				
 				// Update active nav link
 				navLinks.forEach(l => l.classList.remove('active'));
 				link.classList.add('active');
 				
-				// Show target section
-				sections.forEach(section => {
-					section.classList.remove('active');
+				// Smooth scroll to section
+				targetSection.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start'
 				});
-				document.getElementById(targetId).classList.add('active');
 			});
 		});
 
@@ -1082,13 +1076,36 @@
 				const targetId = button.getAttribute('href').substring(1);
 				
 				if (targetId) {
+					const targetSection = document.getElementById(targetId);
+					
 					// Update nav
 					navLinks.forEach(l => l.classList.remove('active'));
 					document.querySelector(`[href="#${targetId}"]`).classList.add('active');
 					
-					// Show target section
-					sections.forEach(section => section.classList.remove('active'));
-					document.getElementById(targetId).classList.add('active');
+					// Smooth scroll to section
+					targetSection.scrollIntoView({
+						behavior: 'smooth',
+						block: 'start'
+					});
+				}
+			});
+		});
+
+		// Update active nav link based on scroll position
+		window.addEventListener('scroll', () => {
+			let current = '';
+			sections.forEach(section => {
+				const sectionTop = section.offsetTop - 100;
+				const sectionHeight = section.offsetHeight;
+				if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+					current = section.getAttribute('id');
+				}
+			});
+
+			navLinks.forEach(link => {
+				link.classList.remove('active');
+				if (link.getAttribute('href') === `#${current}`) {
+					link.classList.add('active');
 				}
 			});
 		});

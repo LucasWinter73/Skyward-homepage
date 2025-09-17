@@ -143,7 +143,6 @@
 			justify-content: center;
 			flex-wrap: wrap;
 			animation: fadeInUp 1s ease-out 0.6s both;
-			margin-bottom: 60px;
 		}
 
 		.cta-primary {
@@ -181,150 +180,26 @@
 			transform: scale(1.02);
 		}
 
-		/* Featured Links Section on Home */
-		.featured-links {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-			gap: 30px;
-			margin-top: 40px;
-			animation: fadeInUp 1s ease-out 0.8s both;
-		}
-
-		.link-card {
-			background: rgba(255, 255, 255, 0.02);
-			border-radius: 18px;
-			overflow: hidden;
-			border: 1px solid rgba(255, 255, 255, 0.1);
-			transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-			backdrop-filter: blur(20px);
-			cursor: pointer;
-			position: relative;
-			text-decoration: none;
-			color: inherit;
-		}
-
-		.link-card:hover {
-			transform: translateY(-8px) scale(1.02);
-			border-color: #0071e3;
-			background: rgba(255, 255, 255, 0.06);
-			box-shadow: 0 20px 40px rgba(0, 113, 227, 0.15),
-			            0 0 0 1px rgba(0, 113, 227, 0.3);
-		}
-
-		.link-card::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			height: 2px;
-			background: linear-gradient(90deg, 
-			            transparent, 
-			            #0071e3, 
-			            transparent);
-			transform: translateX(-100%);
-			transition: transform 0.6s ease;
-		}
-
-		.link-card:hover::before {
-			transform: translateX(100%);
-		}
-
-		.link-card-image {
-			height: 120px;
-			background: linear-gradient(135deg, #1d1d1f 0%, #2d2d30 100%);
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			position: relative;
-			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-			overflow: hidden;
-		}
-
-		.link-card-image img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-		}
-
-		.link-card:hover .link-card-image img {
-			transform: scale(1.1);
-		}
-
-		.link-placeholder {
-			font-size: 24px;
-			color: rgba(245, 245, 247, 0.4);
-		}
-
-		.link-card-content {
-			padding: 20px;
-			transition: all 0.3s ease;
-		}
-
-		.link-card:hover .link-card-content {
-			background: rgba(0, 113, 227, 0.03);
-		}
-
-		.link-card h3 {
-			font-size: 17px;
-			line-height: 1.29;
-			font-weight: 600;
-			color: #f5f5f7;
-			margin-bottom: 6px;
-			transition: color 0.3s ease;
-		}
-
-		.link-card:hover h3 {
-			color: #0071e3;
-		}
-
-		.link-card p {
-			font-size: 14px;
-			line-height: 1.43;
-			color: rgba(245, 245, 247, 0.8);
-		}
-
-		.link-type {
-			display: inline-block;
-			font-size: 10px;
-			font-weight: 600;
-			padding: 3px 6px;
-			border-radius: 4px;
-			text-transform: uppercase;
-			letter-spacing: 0.06em;
-			margin-bottom: 8px;
-			transition: all 0.3s ease;
-		}
-
-		.type-article {
-			background: rgba(255, 159, 10, 0.2);
-			color: #ff9f0a;
-		}
-
-		.type-video {
-			background: rgba(255, 45, 85, 0.2);
-			color: #ff2d55;
-		}
-
-		.type-news {
-			background: rgba(52, 199, 89, 0.2);
-			color: #34c759;
-		}
-
 		/* Sections */
 		.section {
+			display: none;
 			min-height: 100vh;
 			padding: 110px 22px 0;
 		}
 
 		.section.active {
+			display: block;
 			animation: fadeIn 0.5s ease-out;
 		}
 
 		/* Special case for hero section to ensure proper centering */
 		.hero.section {
+			display: none;
 			padding: 0 22px;
+		}
+
+		.hero.section.active {
+			display: flex;
 		}
 
 		.section-container {
@@ -382,122 +257,6 @@
 			line-height: 1.47;
 			color: rgba(245, 245, 247, 0.8);
 			font-weight: 400;
-		}
-
-		/* Team Section */
-		.team-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-			gap: 40px;
-			margin-top: 60px;
-		}
-
-		.team-card {
-			background: rgba(255, 255, 255, 0.02);
-			border-radius: 18px;
-			overflow: hidden;
-			border: 1px solid rgba(255, 255, 255, 0.1);
-			transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-			backdrop-filter: blur(20px);
-			text-align: center;
-			position: relative;
-		}
-
-		.team-card:hover {
-			transform: translateY(-8px) scale(1.02);
-			border-color: #0071e3;
-			background: rgba(255, 255, 255, 0.06);
-			box-shadow: 0 20px 40px rgba(0, 113, 227, 0.15),
-			            0 0 0 1px rgba(0, 113, 227, 0.3);
-		}
-
-		.team-card::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			height: 2px;
-			background: linear-gradient(90deg, 
-			            transparent, 
-			            #0071e3, 
-			            transparent);
-			transform: translateX(-100%);
-			transition: transform 0.6s ease;
-		}
-
-		.team-card:hover::before {
-			transform: translateX(100%);
-		}
-
-		.team-avatar {
-			width: 120px;
-			height: 120px;
-			margin: 30px auto 20px;
-			border-radius: 50%;
-			background: linear-gradient(135deg, #1d1d1f 0%, #2d2d30 100%);
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			position: relative;
-			overflow: hidden;
-			border: 3px solid rgba(255, 255, 255, 0.1);
-			transition: all 0.4s ease;
-		}
-
-		.team-card:hover .team-avatar {
-			border-color: #0071e3;
-			transform: scale(1.05);
-		}
-
-		.team-avatar img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			border-radius: 50%;
-		}
-
-		.team-avatar-placeholder {
-			font-size: 48px;
-			color: rgba(245, 245, 247, 0.4);
-		}
-
-		.team-info {
-			padding: 0 24px 30px;
-			transition: all 0.3s ease;
-		}
-
-		.team-card:hover .team-info {
-			background: rgba(0, 113, 227, 0.03);
-		}
-
-		.team-info h3 {
-			font-size: 21px;
-			line-height: 1.19;
-			font-weight: 600;
-			color: #f5f5f7;
-			margin-bottom: 4px;
-			transition: color 0.3s ease;
-		}
-
-		.team-card:hover .team-info h3 {
-			color: #0071e3;
-		}
-
-		.team-role {
-			font-size: 15px;
-			line-height: 1.33;
-			color: rgba(245, 245, 247, 0.6);
-			font-weight: 500;
-			margin-bottom: 12px;
-			text-transform: uppercase;
-			letter-spacing: 0.02em;
-		}
-
-		.team-info p {
-			font-size: 15px;
-			line-height: 1.47;
-			color: rgba(245, 245, 247, 0.8);
 		}
 
 		/* Hangar Section - Improved aircraft cards */
@@ -765,9 +524,7 @@
 			
 			.features-grid,
 			.aircraft-grid,
-			.contact-grid,
-			.team-grid,
-			.featured-links {
+			.contact-grid {
 				grid-template-columns: 1fr;
 				gap: 30px;
 			}
@@ -790,7 +547,6 @@
 				<li><a href="#home" class="nav-link active">Home</a></li>
 				<li><a href="#about" class="nav-link">About</a></li>
 				<li><a href="#hangar" class="nav-link">Hangar</a></li>
-				<li><a href="#team" class="nav-link">Team</a></li>
 				<li><a href="#contact" class="nav-link">Contact</a></li>
 			</ul>
 		</div>
@@ -805,48 +561,6 @@
 			<div class="cta-buttons">
 				<a href="#hangar" class="cta-primary">View Aircraft</a>
 				<a href="#about" class="cta-secondary">Learn More</a>
-			</div>
-			
-			<!-- Featured Links Section -->
-			<div class="featured-links">
-				<!-- Article Template -->
-				<a href="https://example-fsnews-article.com" target="_blank" class="link-card">
-					<div class="link-card-image">
-						<img src="images/news/article1.jpg" alt="FSNews Article" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-						<div class="link-placeholder" style="display:none;">📰</div>
-					</div>
-					<div class="link-card-content">
-						<span class="link-type type-article">Article</span>
-						<h3>Skyward Simulations Featured in FSNews</h3>
-						<p>Read about our latest aircraft developments and upcoming releases in this comprehensive FSNews feature.</p>
-					</div>
-				</a>
-				
-				<!-- Video Template -->
-				<a href="https://youtube.com/watch?v=example" target="_blank" class="link-card">
-					<div class="link-card-image">
-						<img src="images/videos/youtube1.jpg" alt="YouTube Video" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-						<div class="link-placeholder" style="display:none;">▶️</div>
-					</div>
-					<div class="link-card-content">
-						<span class="link-type type-video">Video</span>
-						<h3>Diamond DA50 RG First Flight</h3>
-						<p>Watch our detailed walkthrough of the Diamond DA50 RG featuring all systems and flight procedures.</p>
-					</div>
-				</a>
-				
-				<!-- News Template -->
-				<a href="https://example-news.com" target="_blank" class="link-card">
-					<div class="link-card-image">
-						<img src="images/news/news1.jpg" alt="News Article" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-						<div class="link-placeholder" style="display:none;">📢</div>
-					</div>
-					<div class="link-card-content">
-						<span class="link-type type-news">News</span>
-						<h3>Citation Sovereign+ Beta Release</h3>
-						<p>Latest updates on our Citation C680 Sovereign+ development progress and beta testing program.</p>
-					</div>
-				</a>
 			</div>
 		</div>
 	</section>
@@ -915,99 +629,20 @@
 						<p>The latest addition to our fleet is the Cessna Citation C680 Sovereign+, featuring advanced avionics with the Garmin G5000 flightdeck. We're aiming for the most realistic private jet experience in Microsoft Flight Simulator. With detailed Systems including ACARS and CPDLC and the addition of over 170 individual electrical Circuits and respective Circuit breakers, we are confident in delivering an unparalleled simulation experience.</p>
 					</div>
 				</div>
-			</div>
-		</div>
-		<div class="footer">
-			<p>© 2024 Skyward Simulations. All rights reserved.</p>
-		</div>
-	</section>
-
-	<!-- Team Section -->
-	<section id="team" class="section">
-		<div class="section-container">
-			<div class="section-hero">
-				<h2>Meet the team</h2>
-				<div class="section-subtitle">The passionate individuals behind Skyward Simulations, dedicated to bringing you the most authentic flight simulation experiences.</div>
-			</div>
-			
-			<div class="team-grid">
-				<!-- Team Member Template - CEO -->
-				<div class="team-card">
-					<div class="team-avatar">
-						<img src="images/team/lucas-winter.jpg" alt="Lucas Winter" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-						<div class="team-avatar-placeholder" style="display:none;">👨‍💼</div>
-					</div>
-					<div class="team-info">
-						<h3>Lucas Winter</h3>
-						<div class="team-role">Chief Executive Officer</div>
-						<p>Founder and visionary behind Skyward Simulations, Lucas brings years of aviation expertise and passion for realistic flight simulation to every project.</p>
-					</div>
-				</div>
 				
-				<!-- Team Member Template - Developer -->
-				<div class="team-card">
-					<div class="team-avatar">
-						<img src="images/team/member2.jpg" alt="Team Member" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-						<div class="team-avatar-placeholder" style="display:none;">👨‍💻</div>
+				<!-- <div class="aircraft-card">
+					<div class="aircraft-image">
+						<img src="images/aircraft/C680A/C680A_BG.png" alt="Cessna C680A Latitude" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+						<div class="aircraft-placeholder" style="display:none;">Aircraft Image</div>
 					</div>
-					<div class="team-info">
-						<h3>John Smith</h3>
-						<div class="team-role">Lead Developer</div>
-						<p>Specializing in flight systems modeling and aircraft behavior, John ensures every aircraft meets our exacting standards for realism and performance.</p>
+					<div class="aircraft-info">
+						<div class="aircraft-header">
+							<h3>Cessna C680A Latitude</h3>
+							<span class="aircraft-status status-development">In Development</span>
+						</div>
+						<p>As Textron's successor for the Cessna Citation Sovereign series, the C680A Latitude aims to redefine business aviation with its spacious cabin, advanced technology, and superior performance. We expect a release in mid to late 2026 delivering similar, if not better experience compared to all our previous aircraft.</p>
 					</div>
-				</div>
-				
-				<!-- Team Member Template - Designer -->
-				<div class="team-card">
-					<div class="team-avatar">
-						<img src="images/team/member3.jpg" alt="Team Member" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-						<div class="team-avatar-placeholder" style="display:none;">👩‍🎨</div>
-					</div>
-					<div class="team-info">
-						<h3>Sarah Johnson</h3>
-						<div class="team-role">3D Artist & Designer</div>
-						<p>Creating stunning visual experiences and authentic cockpit environments, Sarah brings aircraft to life with incredible attention to detail.</p>
-					</div>
-				</div>
-				
-				<!-- Team Member Template - Audio Engineer -->
-				<div class="team-card">
-					<div class="team-avatar">
-						<img src="images/team/member4.jpg" alt="Team Member" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-						<div class="team-avatar-placeholder" style="display:none;">🎧</div>
-					</div>
-					<div class="team-info">
-						<h3>Michael Davis</h3>
-						<div class="team-role">Audio Engineer</div>
-						<p>Capturing and engineering authentic aircraft sounds that immerse pilots in the true acoustic experience of each aircraft we develop.</p>
-					</div>
-				</div>
-				
-				<!-- Team Member Template - QA Tester -->
-				<div class="team-card">
-					<div class="team-avatar">
-						<img src="images/team/member5.jpg" alt="Team Member" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-						<div class="team-avatar-placeholder" style="display:none;">✈️</div>
-					</div>
-					<div class="team-info">
-						<h3>Emily Rodriguez</h3>
-						<div class="team-role">Quality Assurance Lead</div>
-						<p>Real-world pilot and simulation expert, Emily ensures our aircraft meet professional standards and deliver authentic flight experiences.</p>
-					</div>
-				</div>
-				
-				<!-- Team Member Template - Community Manager -->
-				<div class="team-card">
-					<div class="team-avatar">
-						<img src="images/team/member6.jpg" alt="Team Member" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-						<div class="team-avatar-placeholder" style="display:none;">💬</div>
-					</div>
-					<div class="team-info">
-						<h3>Alex Thompson</h3>
-						<div class="team-role">Community Manager</div>
-						<p>Building and nurturing our passionate community of virtual pilots, Alex ensures everyone has the support they need for the best experience.</p>
-					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<div class="footer">
@@ -1050,22 +685,21 @@
 		const navLinks = document.querySelectorAll('.nav-link');
 		const sections = document.querySelectorAll('.section');
 
-		// Handle navigation clicks - smooth scroll to sections
+		// Handle navigation clicks
 		navLinks.forEach(link => {
 			link.addEventListener('click', (e) => {
 				e.preventDefault();
 				const targetId = link.getAttribute('href').substring(1);
-				const targetSection = document.getElementById(targetId);
 				
 				// Update active nav link
 				navLinks.forEach(l => l.classList.remove('active'));
 				link.classList.add('active');
 				
-				// Smooth scroll to section
-				targetSection.scrollIntoView({
-					behavior: 'smooth',
-					block: 'start'
+				// Show target section
+				sections.forEach(section => {
+					section.classList.remove('active');
 				});
+				document.getElementById(targetId).classList.add('active');
 			});
 		});
 
@@ -1076,43 +710,20 @@
 				const targetId = button.getAttribute('href').substring(1);
 				
 				if (targetId) {
-					const targetSection = document.getElementById(targetId);
-					
 					// Update nav
 					navLinks.forEach(l => l.classList.remove('active'));
 					document.querySelector(`[href="#${targetId}"]`).classList.add('active');
 					
-					// Smooth scroll to section
-					targetSection.scrollIntoView({
-						behavior: 'smooth',
-						block: 'start'
-					});
-				}
-			});
-		});
-
-		// Update active nav link based on scroll position
-		window.addEventListener('scroll', () => {
-			let current = '';
-			sections.forEach(section => {
-				const sectionTop = section.offsetTop - 100;
-				const sectionHeight = section.offsetHeight;
-				if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-					current = section.getAttribute('id');
-				}
-			});
-
-			navLinks.forEach(link => {
-				link.classList.remove('active');
-				if (link.getAttribute('href') === `#${current}`) {
-					link.classList.add('active');
+					// Show target section
+					sections.forEach(section => section.classList.remove('active'));
+					document.getElementById(targetId).classList.add('active');
 				}
 			});
 		});
 
 		// Animate elements on load
 		window.addEventListener('load', () => {
-			const cards = document.querySelectorAll('.feature-card, .aircraft-card, .contact-card, .team-card, .link-card');
+			const cards = document.querySelectorAll('.feature-card, .aircraft-card, .contact-card');
 			cards.forEach((card, index) => {
 				setTimeout(() => {
 					card.style.animation = `fadeInUp 0.6s ease-out forwards`;

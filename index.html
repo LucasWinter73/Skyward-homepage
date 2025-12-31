@@ -39,7 +39,6 @@
 			-moz-osx-font-smoothing: grayscale;
 		}
 
-		/* Header - matching sovereign tracker */
 		header {
 			background: var(--bg-secondary);
 			backdrop-filter: blur(20px);
@@ -108,14 +107,12 @@
 			background: rgba(255, 255, 255, 0.1);
 		}
 
-		/* Main Layout */
 		.main-container {
 			display: flex;
 			min-height: 100vh;
 			padding-top: 70px;
 		}
 
-		/* Sidebar */
 		.sidebar {
 			width: 280px;
 			background: var(--bg-secondary);
@@ -178,7 +175,6 @@
 			opacity: 0.7;
 		}
 
-		/* Content Area */
 		.content {
 			flex: 1;
 			margin-left: 280px;
@@ -201,7 +197,6 @@
 			to { opacity: 1; transform: translateY(0); }
 		}
 
-		/* Page Header */
 		.page-header {
 			margin-bottom: 2rem;
 		}
@@ -221,7 +216,6 @@
 			max-width: 600px;
 		}
 
-		/* Stats Grid - like sovereign tracker */
 		.stats-grid {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -273,7 +267,6 @@
 			margin-top: 0.25rem;
 		}
 
-		/* Panel Cards - like sovereign tracker sidebar panels */
 		.panel {
 			background: var(--bg-glass);
 			border: 1px solid var(--border-color);
@@ -339,7 +332,6 @@
 			padding: 1.25rem;
 		}
 
-		/* Aircraft Cards - like pilot cards in sovereign tracker */
 		.aircraft-list {
 			display: flex;
 			flex-direction: column;
@@ -432,7 +424,6 @@
 			margin-top: 0.125rem;
 		}
 
-		/* Feature Cards - compact list style */
 		.feature-list {
 			display: flex;
 			flex-direction: column;
@@ -484,7 +475,6 @@
 			line-height: 1.5;
 		}
 
-		/* Contact Cards */
 		.contact-grid {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -528,7 +518,6 @@
 			color: var(--text-primary);
 		}
 
-		/* Hero Section - dashboard style */
 		.hero-panel {
 			background: linear-gradient(135deg, rgba(28, 28, 30, 0.9), rgba(44, 44, 46, 0.7)),
 						url('images/aircraft/C680/C680_1.png') center/cover no-repeat;
@@ -612,38 +601,6 @@
 			color: var(--text-primary);
 		}
 
-		/* Quick Stats Row */
-		.quick-stats {
-			display: grid;
-			grid-template-columns: repeat(4, 1fr);
-			gap: 1rem;
-			margin-bottom: 2rem;
-		}
-
-		.quick-stat {
-			background: var(--bg-glass);
-			border: 1px solid var(--border-color);
-			border-radius: 12px;
-			padding: 1rem;
-			text-align: center;
-		}
-
-		.quick-stat-value {
-			font-size: 1.5rem;
-			font-weight: 600;
-			color: var(--text-primary);
-			font-family: 'SF Mono', SFMono-Regular, Consolas, monospace;
-		}
-
-		.quick-stat-label {
-			font-size: 0.6875rem;
-			color: var(--text-tertiary);
-			text-transform: uppercase;
-			letter-spacing: 0.05em;
-			margin-top: 0.25rem;
-		}
-
-		/* Footer */
 		.footer {
 			margin-top: 3rem;
 			padding: 1.5rem 0;
@@ -654,115 +611,6 @@
 		.footer p {
 			font-size: 0.75rem;
 			color: var(--text-tertiary);
-		}
-
-		/* Gallery Grid Styles */
-		.gallery-description {
-			font-size: 0.9375rem;
-			color: var(--text-secondary);
-			line-height: 1.5;
-			margin-bottom: 1.5rem;
-		}
-
-		/* News Update Styles */
-		.news-update {
-			margin-bottom: 2rem;
-		}
-
-		.news-update p {
-			font-size: 0.9375rem;
-			color: var(--text-secondary);
-			line-height: 1.7;
-			margin-bottom: 1rem;
-		}
-
-		.news-update h3 {
-			font-size: 1.125rem;
-			font-weight: 600;
-			color: var(--text-primary);
-			margin-top: 1.75rem;
-			margin-bottom: 1rem;
-			padding-bottom: 0.5rem;
-			border-bottom: 1px solid var(--border-color);
-		}
-
-		.news-update strong {
-			color: var(--text-primary);
-		}
-
-		.news-update em {
-			font-style: italic;
-		}
-
-		.feature-list-compact {
-			list-style: none;
-			padding: 0;
-			margin: 0 0 1rem 0;
-		}
-
-		.feature-list-compact > li {
-			font-size: 0.875rem;
-			color: var(--text-secondary);
-			line-height: 1.6;
-			padding: 0.625rem 0;
-			padding-left: 1.25rem;
-			position: relative;
-			border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-		}
-
-		.feature-list-compact > li:last-child {
-			border-bottom: none;
-		}
-
-		.feature-list-compact > li::before {
-			content: '';
-			position: absolute;
-			left: 0;
-			top: 0.9rem;
-			width: 6px;
-			height: 6px;
-			background: var(--info);
-			border-radius: 50%;
-		}
-
-		.feature-list-compact > li strong {
-			color: var(--text-primary);
-		}
-
-		.feature-list-compact ul {
-			list-style: none;
-			padding: 0;
-			margin: 0.5rem 0 0 1rem;
-		}
-
-		.feature-list-compact ul li {
-			font-size: 0.8125rem;
-			color: var(--text-tertiary);
-			line-height: 1.5;
-			padding: 0.375rem 0;
-			padding-left: 1rem;
-			position: relative;
-		}
-
-		.feature-list-compact ul li::before {
-			content: '';
-			position: absolute;
-			left: 0;
-			top: 0.65rem;
-			width: 4px;
-			height: 4px;
-			background: var(--text-tertiary);
-			border-radius: 50%;
-		}
-
-		.feature-list-compact ul li strong {
-			color: var(--text-secondary);
-		}
-
-		.news-closing {
-			margin-top: 1.5rem;
-			font-style: italic;
-			color: var(--text-tertiary) !important;
 		}
 
 		.gallery-grid {
@@ -813,7 +661,6 @@
 			fill: white;
 		}
 
-		/* Lightbox Styles */
 		.lightbox {
 			display: none;
 			position: fixed;
@@ -880,7 +727,6 @@
 			text-align: center;
 		}
 
-		/* Iframe Embed Styles */
 		.iframe-container {
 			position: relative;
 			width: 100%;
@@ -897,271 +743,6 @@
 			border: none;
 		}
 
-		.iframe-loading {
-			position: absolute;
-			inset: 0;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			background: var(--bg-glass);
-			color: var(--text-tertiary);
-			font-size: 0.875rem;
-		}
-
-		/* Responsive Gallery */
-		@media (max-width: 768px) {
-			.gallery-grid {
-				grid-template-columns: repeat(2, 1fr);
-			}
-			
-			.iframe-container {
-				height: 400px;
-			}
-		}
-
-		@media (max-width: 480px) {
-			.gallery-grid {
-				grid-template-columns: 1fr;
-			}
-			
-			.iframe-container {
-				height: 300px;
-			}
-		}
-
-		/* Map Section */
-		.map-container {
-			height: calc(100vh - 200px);
-			min-height: 500px;
-			border-radius: 16px;
-			overflow: hidden;
-			border: 1px solid var(--border-color);
-			margin-bottom: 1.5rem;
-		}
-
-		#flights-map {
-			width: 100%;
-			height: 100%;
-		}
-
-		.leaflet-container {
-			background: #1c1c1e;
-		}
-
-		.leaflet-popup-content-wrapper {
-			background: rgba(28, 28, 30, 0.95);
-			backdrop-filter: blur(20px);
-			-webkit-backdrop-filter: blur(20px);
-			color: var(--text-primary);
-			border: 1px solid var(--border-color);
-			border-radius: 12px;
-			box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-		}
-
-		.leaflet-popup-content {
-			margin: 0.875rem 1rem;
-			font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-		}
-
-		.leaflet-popup-tip {
-			background: rgba(28, 28, 30, 0.95);
-			border: 1px solid var(--border-color);
-			border-top: none;
-			border-left: none;
-		}
-
-		.popup-content h3 {
-			color: var(--text-primary);
-			margin-bottom: 0.25rem;
-			font-size: 1rem;
-			font-weight: 600;
-		}
-
-		.popup-meta {
-			color: var(--text-tertiary);
-			font-size: 0.75rem;
-			font-family: 'SF Mono', monospace;
-			margin-bottom: 0.75rem;
-		}
-
-		.popup-grid {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			gap: 0.5rem;
-		}
-
-		.popup-stat {
-			text-align: center;
-			padding: 0.5rem;
-			background: rgba(255, 255, 255, 0.05);
-			border-radius: 8px;
-		}
-
-		.popup-stat-value {
-			font-size: 0.9375rem;
-			font-weight: 600;
-			color: var(--text-primary);
-		}
-
-		.popup-stat-label {
-			font-size: 0.625rem;
-			color: var(--text-tertiary);
-			text-transform: uppercase;
-			letter-spacing: 0.03em;
-		}
-
-		.leaflet-control-zoom {
-			border: none !important;
-			box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
-		}
-
-		.leaflet-control-zoom a {
-			background: rgba(28, 28, 30, 0.9) !important;
-			backdrop-filter: blur(10px);
-			color: var(--text-primary) !important;
-			border: 1px solid var(--border-color) !important;
-			width: 36px !important;
-			height: 36px !important;
-			line-height: 36px !important;
-			font-size: 18px !important;
-		}
-
-		.leaflet-control-zoom a:first-child {
-			border-radius: 10px 10px 0 0 !important;
-		}
-
-		.leaflet-control-zoom a:last-child {
-			border-radius: 0 0 10px 10px !important;
-		}
-
-		.leaflet-control-zoom a:hover {
-			background: rgba(44, 44, 46, 0.9) !important;
-		}
-
-		.leaflet-control-attribution {
-			background: rgba(0, 0, 0, 0.6) !important;
-			color: var(--text-tertiary) !important;
-			font-size: 10px !important;
-			padding: 4px 8px !important;
-		}
-
-		.leaflet-control-attribution a {
-			color: var(--text-secondary) !important;
-		}
-
-		.plane-marker {
-			background: transparent;
-			border: none;
-		}
-
-		.plane-marker svg {
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
-		}
-
-		.map-stats {
-			display: grid;
-			grid-template-columns: repeat(4, 1fr);
-			gap: 1rem;
-			margin-bottom: 1.5rem;
-		}
-
-		.map-stat {
-			background: var(--bg-glass);
-			border: 1px solid var(--border-color);
-			border-radius: 12px;
-			padding: 1rem;
-			text-align: center;
-		}
-
-		.map-stat-value {
-			font-size: 1.5rem;
-			font-weight: 600;
-			color: var(--text-primary);
-			font-family: 'SF Mono', SFMono-Regular, Consolas, monospace;
-		}
-
-		.map-stat-label {
-			font-size: 0.6875rem;
-			color: var(--text-tertiary);
-			text-transform: uppercase;
-			letter-spacing: 0.05em;
-			margin-top: 0.25rem;
-		}
-
-		.flights-list {
-			display: flex;
-			flex-direction: column;
-			gap: 0.625rem;
-			max-height: 400px;
-			overflow-y: auto;
-		}
-
-		.flight-card {
-			background: var(--bg-glass);
-			border: 1px solid var(--border-color);
-			border-radius: 12px;
-			padding: 1rem;
-			transition: all 0.2s ease;
-			cursor: pointer;
-		}
-
-		.flight-card:hover {
-			background: rgba(255, 255, 255, 0.08);
-		}
-
-		.flight-route {
-			display: flex;
-			align-items: center;
-			gap: 0.75rem;
-			margin-bottom: 0.75rem;
-		}
-
-		.flight-airport {
-			background: rgba(255, 255, 255, 0.1);
-			padding: 0.375rem 0.5rem;
-			border-radius: 6px;
-			font-family: 'SF Mono', SFMono-Regular, Consolas, monospace;
-			font-size: 0.75rem;
-			font-weight: 600;
-			color: var(--text-primary);
-		}
-
-		.flight-arrow {
-			color: var(--text-tertiary);
-			flex-shrink: 0;
-		}
-
-		.flight-arrow svg {
-			width: 16px;
-			height: 16px;
-			fill: currentColor;
-		}
-
-		.flight-info {
-			display: flex;
-			justify-content: space-between;
-			font-size: 0.75rem;
-			color: var(--text-tertiary);
-		}
-
-		.empty-map-state {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			height: 300px;
-			color: var(--text-tertiary);
-		}
-
-		.empty-map-state svg {
-			width: 48px;
-			height: 48px;
-			fill: currentColor;
-			opacity: 0.3;
-			margin-bottom: 1rem;
-		}
-
-		/* Aircraft Details Modal */
 		.modal {
 			display: none;
 			position: fixed;
@@ -1341,22 +922,6 @@
 			border-top: 1px solid var(--border-color);
 		}
 
-		@media (max-width: 768px) {
-			.modal-header {
-				grid-template-columns: 1fr;
-			}
-			
-			.modal-specs {
-				grid-template-columns: 1fr;
-			}
-			
-			.modal-content {
-				padding: 1.5rem;
-				width: 95%;
-			}
-		}
-
-		/* Responsive */
 		@media (max-width: 1024px) {
 			.sidebar {
 				display: none;
@@ -1364,10 +929,16 @@
 			.content {
 				margin-left: 0;
 			}
-			.header-content {
-				padding: 0 1rem;
+		}
+
+		@media (max-width: 768px) {
+			.modal-header {
+				grid-template-columns: 1fr;
 			}
-			.quick-stats {
+			.modal-specs {
+				grid-template-columns: 1fr;
+			}
+			.gallery-grid {
 				grid-template-columns: repeat(2, 1fr);
 			}
 		}
@@ -1394,11 +965,11 @@
 			.page-title {
 				font-size: 1.5rem;
 			}
-			.quick-stats {
-				grid-template-columns: 1fr 1fr;
-			}
 			.hero-actions {
 				flex-direction: column;
+			}
+			.gallery-grid {
+				grid-template-columns: 1fr;
 			}
 		}
 	</style>
@@ -1412,7 +983,6 @@
 			<nav>
 				<ul class="nav-links">
 					<li><a href="#home" class="nav-link active">Home</a></li>
-					<!-- <li><a href="#map" class="nav-link">Map</a></li> -->
 					<li><a href="#about" class="nav-link">About</a></li>
 					<li><a href="#hangar" class="nav-link">Hangar</a></li>
 					<li><a href="#contact" class="nav-link">Contact</a></li>
@@ -1430,10 +1000,6 @@
 						<svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
 						Home
 					</a>
-					<a href="#map" class="sidebar-link">
-						<svg viewBox="0 0 24 24"><path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"/></svg>
-						Map
-					</a>
 					<a href="#about" class="sidebar-link">
 						<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
 						About
@@ -1448,7 +1014,6 @@
 					</a>
 				</nav>
 			</div>
-
 			<div class="sidebar-section">
 				<div class="sidebar-title">Quick Links</div>
 				<nav class="sidebar-nav">
@@ -1494,103 +1059,51 @@
 					</div>
 				</div>
 
-			<div class="panel">
-				<div class="panel-header">
-					<span class="panel-title">Gallery</span>
-				</div>
-				<div class="panel-content">
-					<!-- Gallery Grid - 3 columns of square images -->
-					<div class="gallery-grid">
-						<!-- ADD YOUR IMAGES HERE - Copy this template for each image -->
-						<div class="gallery-item" onclick="openLightbox('images/aircraft/DA50/DA50_BG.jpg', 'Image caption here')">
-							<img src="images/aircraft/DA50/DA50_BG.jpg" alt="Gallery image 1">
-							<div class="gallery-overlay">
-								<svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z"/></svg>
-							</div>
-						</div>
-						<div class="gallery-item" onclick="openLightbox('images/aircraft/C680/C680_BG.png', 'Image caption here')">
-							<img src="images/aircraft/C680/C680_BG.png" alt="Gallery image 2">
-							<div class="gallery-overlay">
-								<svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z"/></svg>
-							</div>
-						</div>
-						<div class="gallery-item" onclick="openLightbox('images/aircraft/C680/C680_1.png', 'Image caption here')">
-							<img src="images/aircraft/C680/C680_1.png" alt="Gallery image 3">
-							<div class="gallery-overlay">
-								<svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z"/></svg>
-							</div>
-						</div>
-						<!-- Add more gallery items as needed using the template above -->
-					</div>
-				</div>
-			</div>
-
-			<div class="news-embed" data-title="Latest News" data-url="https://fsnews.eu/skyward-simulations-shares-development-update-on-citation-sovereign-for-msfs/"></div>
-			<div class="news-embed" data-title="Latest News" data-url="https://fsnews.eu/skyward-announces-citation-c680-sovereign-for-msfs/"></div>
-			<div class="news-embed" data-title="Latest News" data-url="https://fsnews.eu/skyward-sim-release-da50rg/"></div>
-			<div class="news-embed" data-title="Latest News" data-url="https://fsnews.eu/skyward-simulations-announces-diamond-da50-rg-for-msfs/"></div>
-
-			<!-- Lightbox Modal for Gallery -->
-			<div id="galleryLightbox" class="lightbox">
-				<div class="lightbox-content">
-					<button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-					<img id="lightboxImage" src="" alt="Full size image">
-					<div id="lightboxCaption" class="lightbox-caption"></div>
-				</div>
-			</div>				<div class="footer">
-					<p>2024 Skyward Simulations. All rights reserved.</p>
-				</div>
-			</section>
-
-			<!-- Map Section
-			<section id="map" class="content-section">
-				<div class="page-header">
-					<h1 class="page-title">Public Flights</h1>
-					<p class="page-subtitle">Track public flights from our community in real-time.</p>
-				</div>
-
-				<div class="map-stats">
-					<div class="map-stat">
-						<div class="map-stat-value" id="totalFlightsCount">--</div>
-						<div class="map-stat-label">Total Flights</div>
-					</div>
-					<div class="map-stat">
-						<div class="map-stat-value" id="activeFlightsCount">--</div>
-						<div class="map-stat-label">Active Now</div>
-					</div>
-					<div class="map-stat">
-						<div class="map-stat-value" id="totalDistanceNm">--</div>
-						<div class="map-stat-label">Total NM</div>
-					</div>
-					<div class="map-stat">
-						<div class="map-stat-value" id="avgFlightTime">--</div>
-						<div class="map-stat-label">Avg Duration</div>
-					</div>
-				</div>
-
-				<div class="map-container">
-					<div id="flights-map"></div>
-				</div>
-
 				<div class="panel">
 					<div class="panel-header">
-						<span class="panel-title">Recent Flights</span>
-						<span class="panel-badge badge-info" id="flightsBadge">Loading...</span>
+						<span class="panel-title">Gallery</span>
 					</div>
 					<div class="panel-content">
-						<div class="flights-list" id="flightsList">
-							<div class="empty-map-state">
-								<svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
-								<div>Loading flights...</div>
+						<div class="gallery-grid">
+							<div class="gallery-item" onclick="openLightbox('images/aircraft/DA50/DA50_BG.jpg', 'Diamond DA50 RG')">
+								<img src="images/aircraft/DA50/DA50_BG.jpg" alt="Gallery image 1">
+								<div class="gallery-overlay">
+									<svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z"/></svg>
+								</div>
+							</div>
+							<div class="gallery-item" onclick="openLightbox('images/aircraft/C680/C680_BG.png', 'Cessna Citation Sovereign+')">
+								<img src="images/aircraft/C680/C680_BG.png" alt="Gallery image 2">
+								<div class="gallery-overlay">
+									<svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z"/></svg>
+								</div>
+							</div>
+							<div class="gallery-item" onclick="openLightbox('images/aircraft/C680/C680_1.png', 'Cessna Citation Sovereign+ Cockpit')">
+								<img src="images/aircraft/C680/C680_1.png" alt="Gallery image 3">
+								<div class="gallery-overlay">
+									<svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z"/></svg>
+								</div>
 							</div>
 						</div>
+					</div>
+				</div>
+
+				<div class="news-embed" data-title="Latest News" data-url="https://fsnews.eu/skyward-simulations-shares-development-update-on-citation-sovereign-for-msfs/"></div>
+				<div class="news-embed" data-title="Latest News" data-url="https://fsnews.eu/skyward-announces-citation-c680-sovereign-for-msfs/"></div>
+				<div class="news-embed" data-title="Latest News" data-url="https://fsnews.eu/skyward-sim-release-da50rg/"></div>
+				<div class="news-embed" data-title="Latest News" data-url="https://fsnews.eu/skyward-simulations-announces-diamond-da50-rg-for-msfs/"></div>
+
+				<div id="galleryLightbox" class="lightbox">
+					<div class="lightbox-content">
+						<button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+						<img id="lightboxImage" src="" alt="Full size image">
+						<div id="lightboxCaption" class="lightbox-caption"></div>
 					</div>
 				</div>
 
 				<div class="footer">
 					<p>2024 Skyward Simulations. All rights reserved.</p>
 				</div>
-			</section> -->
+			</section>
 
 			<!-- About Section -->
 			<section id="about" class="content-section">
@@ -1675,19 +1188,19 @@
 								<span class="aircraft-card-name">Diamond DA50 RG</span>
 								<span class="panel-badge badge-success">Available</span>
 							</div>
-							<p class="aircraft-card-desc">Our flagship general aviation aircraft featuring fully functional G1000 avionics, realistic flight dynamics, and photorealistic 4K textures. Sounds by Boris Audio Works. Perfect for training and cross-country flights.</p>
+							<p class="aircraft-card-desc">Our flagship general aviation aircraft featuring fully functional G1000 NXi avionics, realistic flight dynamics, and professional sound package by Boris Audio Works. Perfect for training and cross-country flights.</p>
 							<div class="aircraft-card-stats">
 								<div class="aircraft-stat">
 									<div class="aircraft-stat-value">G1000</div>
 									<div class="aircraft-stat-label">Avionics</div>
 								</div>
 								<div class="aircraft-stat">
-									<div class="aircraft-stat-value">4K</div>
-									<div class="aircraft-stat-label">Textures</div>
+									<div class="aircraft-stat-value">200 kts</div>
+									<div class="aircraft-stat-label">Max Speed</div>
 								</div>
 								<div class="aircraft-stat">
-									<div class="aircraft-stat-value">RG</div>
-									<div class="aircraft-stat-label">Gear Type</div>
+									<div class="aircraft-stat-value">1,650 nm</div>
+									<div class="aircraft-stat-label">Range</div>
 								</div>
 							</div>
 						</div>
@@ -1702,19 +1215,19 @@
 								<span class="aircraft-card-name">Cessna Citation C680 Sovereign+</span>
 								<span class="panel-badge badge-info">Beta</span>
 							</div>
-							<p class="aircraft-card-desc">The latest addition to our fleet featuring advanced avionics with the Garmin G5000 flightdeck. Detailed systems including ACARS and CPDLC with over 170 individual electrical circuits and respective circuit breakers.</p>
+							<p class="aircraft-card-desc">Mid-size business jet featuring the advanced Garmin G5000 flightdeck with integrated ACARS and CPDLC datalink communications. Detailed systems modeling with over 170 individual electrical circuits.</p>
 							<div class="aircraft-card-stats">
 								<div class="aircraft-stat">
 									<div class="aircraft-stat-value">G5000</div>
 									<div class="aircraft-stat-label">Avionics</div>
 								</div>
 								<div class="aircraft-stat">
-									<div class="aircraft-stat-value">170+</div>
-									<div class="aircraft-stat-label">Circuits</div>
+									<div class="aircraft-stat-value">M 0.75</div>
+									<div class="aircraft-stat-label">Max Speed</div>
 								</div>
 								<div class="aircraft-stat">
-									<div class="aircraft-stat-value">CPDLC</div>
-									<div class="aircraft-stat-label">Datalink</div>
+									<div class="aircraft-stat-value">3,000 nm</div>
+									<div class="aircraft-stat-label">Range</div>
 								</div>
 							</div>
 						</div>
@@ -1767,280 +1280,6 @@
 
 	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 	<script>
-		// Supabase configuration
-		// const SUPABASE_URL = 'https://oottnrunlofnpuakiazo.supabase.co';
-		// const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9vdHRucnVubG9mbnB1YWtpYXpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjkyNzcsImV4cCI6MjA3OTQwNTI3N30.FdXx4rsuXirUeKxjRK_SxDLQZmSYxBmoCYY1-28-dzI';
-
-		let flightsMap = null;
-		let flightMarkers = {};
-		let publicFlightsData = [];
-
-		// Initialize map when the Map section is shown
-		function initMap() {
-			if (flightsMap) return; // Already initialized
-
-			flightsMap = L.map('flights-map').setView([47.0, 8.0], 5);
-			L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-				attribution: '© OpenStreetMap © CARTO',
-				maxZoom: 19
-			}).addTo(flightsMap);
-
-			// Fetch flights data
-			fetchPublicFlights();
-		}
-
-		// Create plane icon
-		function createPlaneIcon(heading = 0) {
-			const svg = `<svg viewBox="0 0 24 24" width="24" height="24" style="transform: rotate(${heading}deg)">
-				<path fill="#ffffff" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
-			</svg>`;
-			
-			return L.divIcon({
-				html: svg,
-				className: 'plane-marker',
-				iconSize: [24, 24],
-				iconAnchor: [12, 12]
-			});
-		}
-
-		// Calculate distance in nautical miles
-		function calculateDistanceNm(lat1, lon1, lat2, lon2) {
-			if (!lat1 || !lon1 || !lat2 || !lon2) return 0;
-			const R = 3440.065;
-			const dLat = (lat2 - lat1) * Math.PI / 180;
-			const dLon = (lon2 - lon1) * Math.PI / 180;
-			const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-					  Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-					  Math.sin(dLon / 2) * Math.sin(dLon / 2);
-			const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-			return R * c;
-		}
-
-		// Format duration
-		function formatDuration(minutes) {
-			if (!minutes || minutes <= 0) return '0m';
-			const hrs = Math.floor(minutes / 60);
-			const mins = Math.round(minutes % 60);
-			if (hrs === 0) return `${mins}m`;
-			return `${hrs}h ${mins}m`;
-		}
-
-		// Format relative time
-		function formatRelativeTime(date) {
-			const now = new Date();
-			const diff = now - date;
-			const minutes = Math.floor(diff / 60000);
-			const hours = Math.floor(minutes / 60);
-			const days = Math.floor(hours / 24);
-
-			if (minutes < 1) return 'just now';
-			if (minutes < 60) return `${minutes}m ago`;
-			if (hours < 24) return `${hours}h ago`;
-			if (days < 7) return `${days}d ago`;
-			return date.toLocaleDateString();
-		}
-
-		// Fetch public flights from Supabase
-		async function fetchPublicFlights() {
-			try {
-				// Try public_flights table first
-				let response = await fetch(
-					`${SUPABASE_URL}/rest/v1/public_flights?select=*&order=created_at.desc&limit=100`,
-					{
-						headers: {
-							'apikey': SUPABASE_KEY,
-							'Authorization': `Bearer ${SUPABASE_KEY}`
-						}
-					}
-				);
-
-				let flights = [];
-				
-				if (response.ok) {
-					flights = await response.json();
-				}
-
-				// If public_flights is empty, try flight_sessions
-				if (flights.length === 0) {
-					response = await fetch(
-						`${SUPABASE_URL}/rest/v1/flight_sessions?select=*&order=start_time.desc&limit=100`,
-						{
-							headers: {
-								'apikey': SUPABASE_KEY,
-								'Authorization': `Bearer ${SUPABASE_KEY}`
-							}
-						}
-					);
-
-					if (response.ok) {
-						flights = await response.json();
-					}
-				}
-
-				publicFlightsData = flights;
-				updateMapDisplay(flights);
-				updateFlightStats(flights);
-				updateFlightsList(flights);
-
-			} catch (error) {
-				console.error('Error fetching flights:', error);
-				document.getElementById('flightsBadge').textContent = 'Error';
-				document.getElementById('flightsList').innerHTML = `
-					<div class="empty-map-state">
-						<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-						<div>Failed to load flights</div>
-					</div>
-				`;
-			}
-		}
-
-		// Update map with flight markers
-		function updateMapDisplay(flights) {
-			if (!flightsMap) return;
-
-			// Clear existing markers
-			Object.values(flightMarkers).forEach(marker => {
-				flightsMap.removeLayer(marker);
-			});
-			flightMarkers = {};
-
-			// Add markers for flights with valid coordinates
-			flights.forEach(flight => {
-				const lat = flight.current_latitude || flight.latitude || flight.start_latitude;
-				const lon = flight.current_longitude || flight.longitude || flight.start_longitude;
-				const heading = flight.current_heading || flight.heading || 0;
-
-				if (!lat || !lon) return;
-
-				const icon = createPlaneIcon(heading);
-				const altitude = flight.current_altitude || flight.altitude || '--';
-				const speed = flight.current_speed || flight.speed || '--';
-				const callsign = flight.atc_id || flight.callsign || flight.session_id || 'Unknown';
-				const origin = flight.start_icao || flight.origin || '--';
-				const dest = flight.current_icao || flight.destination || '--';
-
-				const popupContent = `
-					<div class="popup-content">
-						<h3>${callsign}</h3>
-						<div class="popup-meta">${origin} → ${dest}</div>
-						<div class="popup-grid">
-							<div class="popup-stat">
-								<div class="popup-stat-value">${typeof altitude === 'number' ? Math.round(altitude).toLocaleString() : altitude}</div>
-								<div class="popup-stat-label">Altitude (ft)</div>
-							</div>
-							<div class="popup-stat">
-								<div class="popup-stat-value">${typeof speed === 'number' ? Math.round(speed) : speed}</div>
-								<div class="popup-stat-label">Speed (kts)</div>
-							</div>
-						</div>
-					</div>
-				`;
-
-				const marker = L.marker([lat, lon], { icon })
-					.addTo(flightsMap)
-					.bindPopup(popupContent);
-
-				flightMarkers[flight.session_id || flight.id] = marker;
-			});
-
-			// Fit bounds if we have markers
-			const markerArray = Object.values(flightMarkers);
-			if (markerArray.length > 0) {
-				const group = L.featureGroup(markerArray);
-				flightsMap.fitBounds(group.getBounds().pad(0.1));
-			}
-		}
-
-		// Update flight statistics
-		function updateFlightStats(flights) {
-			const totalFlights = flights.length;
-			const activeFlights = flights.filter(f => f.is_active || !f.end_time).length;
-
-			let totalNm = 0;
-			let totalMinutes = 0;
-			let completedFlights = 0;
-
-			flights.forEach(flight => {
-				// Calculate distance
-				const startLat = flight.start_latitude;
-				const startLon = flight.start_longitude;
-				const endLat = flight.current_latitude || flight.end_latitude;
-				const endLon = flight.current_longitude || flight.end_longitude;
-
-				const distance = calculateDistanceNm(startLat, startLon, endLat, endLon);
-				if (distance > 0 && distance < 15000) {
-					totalNm += distance;
-				}
-
-				// Calculate duration
-				if (flight.end_time && flight.start_time) {
-					const duration = (new Date(flight.end_time) - new Date(flight.start_time)) / 60000;
-					if (duration > 0 && duration < 1440) {
-						totalMinutes += duration;
-						completedFlights++;
-					}
-				}
-			});
-
-			const avgDuration = completedFlights > 0 ? totalMinutes / completedFlights : 0;
-
-			document.getElementById('totalFlightsCount').textContent = totalFlights.toLocaleString();
-			document.getElementById('activeFlightsCount').textContent = activeFlights.toString();
-			document.getElementById('totalDistanceNm').textContent = totalNm > 0 ? Math.round(totalNm).toLocaleString() : '--';
-			document.getElementById('avgFlightTime').textContent = formatDuration(avgDuration);
-		}
-
-		// Update flights list
-		function updateFlightsList(flights) {
-			const listEl = document.getElementById('flightsList');
-			const badgeEl = document.getElementById('flightsBadge');
-
-			badgeEl.textContent = `${flights.length} flights`;
-
-			if (flights.length === 0) {
-				listEl.innerHTML = `
-					<div class="empty-map-state">
-						<svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
-						<div>No flights recorded yet</div>
-					</div>
-				`;
-				return;
-			}
-
-			listEl.innerHTML = flights.slice(0, 20).map(flight => {
-				const callsign = flight.atc_id || flight.callsign || flight.session_id?.slice(0, 8) || 'Unknown';
-				const origin = flight.start_icao || flight.origin || '----';
-				const dest = flight.current_icao || flight.destination || '----';
-				const time = flight.start_time || flight.created_at;
-				const timeStr = time ? formatRelativeTime(new Date(time)) : '--';
-
-				return `
-					<div class="flight-card" onclick="focusFlight('${flight.session_id || flight.id}')">
-						<div class="flight-route">
-							<span class="flight-airport">${origin}</span>
-							<span class="flight-arrow">
-								<svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/></svg>
-							</span>
-							<span class="flight-airport">${dest}</span>
-						</div>
-						<div class="flight-info">
-							<span>${callsign}</span>
-							<span>${timeStr}</span>
-						</div>
-					</div>
-				`;
-			}).join('');
-		}
-
-		// Focus on a specific flight
-		function focusFlight(id) {
-			const marker = flightMarkers[id];
-			if (marker && flightsMap) {
-				flightsMap.setView(marker.getLatLng(), 8);
-				marker.openPopup();
-			}
-		}
-
 		// Navigation
 		const navLinks = document.querySelectorAll('.nav-link');
 		const sidebarLinks = document.querySelectorAll('.sidebar-link[href^="#"]');
@@ -2048,27 +1287,12 @@
 		const buttons = document.querySelectorAll('.btn');
 
 		function showSection(targetId) {
-			// Update nav links
 			navLinks.forEach(l => l.classList.remove('active'));
 			document.querySelector(`.nav-link[href="#${targetId}"]`)?.classList.add('active');
-
-			// Update sidebar links
 			sidebarLinks.forEach(l => l.classList.remove('active'));
 			document.querySelector(`.sidebar-link[href="#${targetId}"]`)?.classList.add('active');
-
-			// Show section
 			sections.forEach(s => s.classList.remove('active'));
 			document.getElementById(targetId)?.classList.add('active');
-
-			// Initialize map when showing map section
-			if (targetId === 'map') {
-				setTimeout(() => {
-					initMap();
-					if (flightsMap) {
-						flightsMap.invalidateSize();
-					}
-				}, 100);
-			}
 		}
 
 		navLinks.forEach(link => {
@@ -2095,13 +1319,6 @@
 			});
 		});
 
-		// Refresh flights data periodically when on map section
-		setInterval(() => {
-			if (document.getElementById('map').classList.contains('active')) {
-				fetchPublicFlights();
-			}
-		}, 30000);
-
 		// Aircraft data
 		const aircraftData = {
 			da50: {
@@ -2111,18 +1328,17 @@
 				image: 'images/aircraft/DA50/DA50_BG.jpg',
 				specs: {
 					'Avionics': 'G1000 NXi',
-					'Engine': 'Lycoming IO-550-C',
+					'Engine': '1× CD-300',
 					'Max Speed': '200 KTAS',
 					'Range': '1,650 NM'
 				},
 				description: 'Our flagship general aviation aircraft representing the pinnacle of modern single-engine design. This aircraft features fully functional Garmin G1000 NXi glass cockpit avionics, realistic flight dynamics modeled from real-world data, and photorealistic 4K textures throughout.',
 				features: [
 					'G1000 NXi Avionics',
-					'4K Textures',
 					'Retractable Gear',
 					'Realistic Systems',
 					'Sound Package',
-					'Flight Training Certified'
+					'Flight Training Ready'
 				],
 				details: {
 					'Development': 'Our flagship general aviation aircraft featuring fully functional G1000 avionics, realistic flight dynamics, and photorealistic 4K textures. Sounds by Boris Audio Works. Perfect for training and cross-country flights.',
@@ -2138,8 +1354,8 @@
 				image: 'images/aircraft/C680/C680_BG.png',
 				specs: {
 					'Avionics': 'Garmin G5000',
-					'Engines': '2x Pratt & Whitney',
-					'Max Speed': 'M.72',
+					'Engines': '2× PW306D',
+					'Max Speed': 'Mach 0.75',
 					'Range': '3,000+ NM'
 				},
 				description: 'The latest addition to our fleet representing next-generation business jet technology. Featuring the advanced Garmin G5000 flightdeck with integrated flight management systems, ACARS, CPDLC, and comprehensive electrical system modeling with over 170 individual circuit breakers.',
@@ -2147,7 +1363,6 @@
 					'Garmin G5000 FD',
 					'170+ Circuits',
 					'ACARS/CPDLC',
-					'Twin Engine',
 					'Pressurized Cabin',
 					'Advanced Systems'
 				],
@@ -2202,21 +1417,17 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="modal-section">
 					<h3>Overview</h3>
 					<p>${aircraft.description}</p>
 				</div>
-
 				<div>
 					<h3 style="font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem;">Features</h3>
 					<div class="features-grid">
 						${featuresHtml}
 					</div>
 				</div>
-
 				${detailsHtml}
-
 				<div class="modal-actions">
 					<a href="https://discord.gg/w4Qz9kTdgd" target="_blank" class="btn btn-primary">Join Discord</a>
 					<button onclick="closeAircraftModal()" class="btn btn-ghost">Close</button>
@@ -2229,23 +1440,6 @@
 		function closeAircraftModal() {
 			document.getElementById('aircraftModal').classList.remove('active');
 		}
-
-		// Close modal when clicking outside
-		document.addEventListener('DOMContentLoaded', function() {
-			document.getElementById('aircraftModal')?.addEventListener('click', function(e) {
-				if (e.target === this) {
-					closeAircraftModal();
-				}
-			});
-		});
-
-		// Close modal on Escape key
-		document.addEventListener('keydown', function(e) {
-			if (e.key === 'Escape') {
-				closeAircraftModal();
-				closeLightbox();
-			}
-		});
 
 		// Gallery Lightbox Functions
 		function openLightbox(imageSrc, caption) {
@@ -2263,21 +1457,20 @@
 			lightbox.classList.remove('active');
 		}
 
-		// Close lightbox when clicking outside the image
+		// Close modals on click outside or Escape key
 		document.addEventListener('DOMContentLoaded', function() {
+			document.getElementById('aircraftModal')?.addEventListener('click', function(e) {
+				if (e.target === this) closeAircraftModal();
+			});
 			document.getElementById('galleryLightbox')?.addEventListener('click', function(e) {
-				if (e.target === this) {
-					closeLightbox();
-				}
+				if (e.target === this) closeLightbox();
 			});
 
 			// Auto-generate news embed panels
 			document.querySelectorAll('.news-embed').forEach(function(embed) {
 				const title = embed.getAttribute('data-title') || 'News';
 				const url = embed.getAttribute('data-url');
-				
 				if (!url) return;
-				
 				embed.outerHTML = `
 					<div class="panel">
 						<div class="panel-header">
@@ -2286,16 +1479,19 @@
 						</div>
 						<div class="panel-content">
 							<div class="iframe-container" style="height: 700px;">
-								<iframe 
-									src="${url}" 
-									title="${title}"
-									loading="lazy">
-								</iframe>
+								<iframe src="${url}" title="${title}" loading="lazy"></iframe>
 							</div>
 						</div>
 					</div>
 				`;
 			});
+		});
+
+		document.addEventListener('keydown', function(e) {
+			if (e.key === 'Escape') {
+				closeAircraftModal();
+				closeLightbox();
+			}
 		});
 	</script>
 </body>

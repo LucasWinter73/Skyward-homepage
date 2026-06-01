@@ -5,7 +5,78 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Skyward Simulations</title>
 	<link rel="icon" href="images/common/Skyward.png" type="image/png" />
-	<meta name="title" content="Skyward Simulations">
+	<meta name="title" content="Skyward Simulations — Most Realistic Business Jet for Microsoft Flight Simulator">
+	<meta name="description" content="Skyward Simulations develops the most realistic business jet add-ons for Microsoft Flight Simulator 2020 and 2024. The Citation C680 Sovereign+ features 600+ electrical circuits, 300+ buses, 1,200+ wiring lines, full CPDLC and ACARS datalink, and a custom Garmin G5000 suite — validated by real-world C680 pilots. The most authentic MSFS business jet available.">
+	<meta name="keywords" content="Microsoft Flight Simulator business jet, most realistic MSFS aircraft, Citation Sovereign MSFS, C680 flight simulator, MSFS 2024 business jet, Garmin G5000 MSFS, CPDLC ACARS flight simulator, realistic jet simulation, Cessna Citation add-on, MSFS 2020 business jet, Skyward Simulations, flight sim add-on, most realistic aircraft simulator, Citation 680 Sovereign Plus MSFS">
+	<meta name="robots" content="index, follow">
+	<meta name="author" content="Skyward Simulations">
+	<link rel="canonical" href="https://skywardsimulations.com/">
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Skyward Simulations — Most Realistic Business Jet for Microsoft Flight Simulator">
+	<meta property="og:description" content="The Citation C680 Sovereign+ for MSFS — 600+ circuits, full CPDLC/ACARS datalink, custom G5000 suite, validated by real C680 pilots. The most authentic business jet simulation available.">
+	<meta property="og:image" content="images/aircraft/C680/Thumbnail/Thumbnail.png">
+	<meta property="og:url" content="https://skywardsimulations.com/">
+	<meta property="og:site_name" content="Skyward Simulations">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Skyward Simulations — Most Realistic Business Jet for MSFS">
+	<meta name="twitter:description" content="The Citation C680 Sovereign+ — the most realistic business jet for Microsoft Flight Simulator.">
+	<meta name="twitter:image" content="images/aircraft/C680/Thumbnail/Thumbnail.png">
+
+	<!-- Structured Data -->
+	<script type="application/ld+json" id="schemaOrg">
+	{
+		"@context": "https://schema.org",
+		"@type": "SoftwareApplication",
+		"name": "Cessna Citation C680 Sovereign+ for Microsoft Flight Simulator",
+		"applicationCategory": "GameApplication",
+		"operatingSystem": "Windows",
+		"description": "The most realistic business jet simulation for Microsoft Flight Simulator 2020 and 2024. Features a custom Garmin G5000 avionics suite, 600+ electrical circuits, 300+ electrical buses, 1,200+ wiring lines, dual-channel FADEC simulation, full CPDLC and ACARS datalink communications, and a high-fidelity flight model validated by pilots who fly the Citation 680 type professionally.",
+		"datePublished": "2026-06-01",
+		"dateModified": "2026-06-01",
+		"offers": {
+			"@type": "Offer",
+			"availability": "https://schema.org/InStock"
+		},
+		"publisher": {
+			"@type": "Organization",
+			"name": "Skyward Simulations",
+			"url": "https://skywardsimulations.com"
+		},
+		"keywords": "Microsoft Flight Simulator, business jet, Citation Sovereign, C680, MSFS 2024, MSFS 2020, Garmin G5000, CPDLC, ACARS, realistic aircraft simulation",
+		"softwareVersion": "1.0",
+		"screenshot": "images/aircraft/C680/Thumbnail/Thumbnail.png"
+	}
+	</script>
+
+	<!-- Freshness signals: stamp today's date into schema + meta on every page load -->
+	<script>
+		(function() {
+			var today = new Date().toISOString().split('T')[0];
+
+			// Update JSON-LD dateModified
+			var schema = document.getElementById('schemaOrg');
+			if (schema) schema.textContent = schema.textContent.replace(/"dateModified": "[^"]*"/, '"dateModified": "' + today + '"');
+
+			// Inject/update Open Graph article modified time
+			var existing = document.querySelector('meta[property="article:modified_time"]');
+			if (!existing) {
+				existing = document.createElement('meta');
+				existing.setAttribute('property', 'article:modified_time');
+				document.head.appendChild(existing);
+			}
+			existing.setAttribute('content', today);
+
+			// Last-Modified meta fallback
+			var lm = document.createElement('meta');
+			lm.setAttribute('name', 'last-modified');
+			lm.setAttribute('content', today);
+			document.head.appendChild(lm);
+		})();
+	</script>
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 	<style>
@@ -381,7 +452,7 @@
 		}
 
 		.aircraft-card-image {
-			height: 180px;
+			height: 280px;
 			background: linear-gradient(135deg, rgba(28, 28, 30, 0.8), rgba(44, 44, 46, 0.6));
 			position: relative;
 			overflow: hidden;
@@ -548,7 +619,7 @@
 
 		.hero-panel {
 			background: linear-gradient(135deg, rgba(28, 28, 30, 0.9), rgba(44, 44, 46, 0.7)),
-						url('images/aircraft/C680/C680_1.png') center/cover no-repeat;
+						url('images/common/Background.png') center/cover no-repeat;
 			border: 1px solid var(--border-color);
 			border-radius: 20px;
 			padding: 4rem 3rem;
@@ -864,8 +935,8 @@
 			border: 1px solid var(--border-color);
 			border-radius: 20px;
 			padding: 2rem;
-			max-width: 800px;
-			width: 90%;
+			max-width: 1300px;
+			width: 92vw;
 			max-height: 90vh;
 			overflow-y: auto;
 			overflow-x: hidden;
@@ -891,10 +962,12 @@
 
 		.modal-close {
 			position: absolute;
-			top: 1.5rem;
-			right: 1.5rem;
-			background: rgba(255, 255, 255, 0.1);
-			border: 1px solid var(--border-color);
+			top: 1rem;
+			right: 1rem;
+			background: rgba(0, 0, 0, 0.55);
+			backdrop-filter: blur(8px);
+			-webkit-backdrop-filter: blur(8px);
+			border: 1px solid rgba(255, 255, 255, 0.15);
 			border-radius: 10px;
 			width: 36px;
 			height: 36px;
@@ -905,7 +978,8 @@
 			transition: all 0.2s ease;
 			padding: 0;
 			font-size: 1.5rem;
-			color: var(--text-secondary);
+			color: var(--text-primary);
+			z-index: 10;
 		}
 
 		.modal-close:hover {
@@ -914,21 +988,23 @@
 		}
 
 		.modal-header {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 2rem;
-			margin-bottom: 2rem;
+			margin-bottom: 1.5rem;
 		}
 
 		.modal-image {
-			height: 300px;
-			border-radius: 16px;
+			width: calc(100% + 4rem);
+			height: 320px;
+			border-radius: 18px 18px 0 0;
 			overflow: hidden;
-			border: 1px solid var(--border-color);
-			background: linear-gradient(135deg, rgba(28, 28, 30, 0.8), rgba(44, 44, 46, 0.6));
+			border: none;
+			background: var(--bg-tertiary);
+			margin: -2rem -2rem 1.5rem -2rem;
+			position: relative;
 		}
 
 		.modal-image img {
+			position: absolute;
+			inset: 0;
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
@@ -994,6 +1070,62 @@
 			margin-bottom: 0.75rem;
 		}
 
+		.modal-section ul {
+			list-style: none;
+			display: flex;
+			flex-direction: column;
+			gap: 0.375rem;
+			margin-bottom: 0.75rem;
+		}
+
+		.modal-section ul li {
+			font-size: 0.9375rem;
+			color: var(--text-secondary);
+			line-height: 1.6;
+			padding-left: 1rem;
+			position: relative;
+		}
+
+		.modal-section ul li::before {
+			content: '–';
+			position: absolute;
+			left: 0;
+			color: var(--text-tertiary);
+		}
+
+		.modal-section .key-features-list {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 0.5rem 1.25rem;
+		}
+
+		.modal-section .key-features-list li {
+			display: flex;
+			gap: 0.5rem;
+			align-items: flex-start;
+			padding-left: 0;
+			position: static;
+		}
+
+		.modal-section .key-features-list li::before { display: none; }
+
+		.modal-section .key-features-list li svg {
+			width: 13px;
+			height: 13px;
+			fill: var(--info);
+			flex-shrink: 0;
+			margin-top: 4px;
+			transform: rotate(90deg);
+		}
+
+		@media (max-width: 768px) {
+			.modal-section .key-features-list { grid-template-columns: repeat(2, 1fr); }
+		}
+
+		@media (max-width: 480px) {
+			.modal-section .key-features-list { grid-template-columns: 1fr; }
+		}
+
 		.features-grid {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -1017,6 +1149,373 @@
 			margin-top: 2rem;
 			padding-top: 1.5rem;
 			border-top: 1px solid var(--border-color);
+		}
+
+		.screenshots-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 0.5rem;
+		}
+
+		.screenshot-item {
+			position: relative;
+			aspect-ratio: 16 / 10;
+			border-radius: 8px;
+			overflow: hidden;
+			cursor: pointer;
+			border: 1px solid var(--border-color);
+			background: var(--bg-tertiary);
+		}
+
+		.screenshot-item img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform 0.3s ease;
+		}
+
+		.screenshot-item:hover img { transform: scale(1.05); }
+
+		.screenshot-overlay {
+			position: absolute;
+			inset: 0;
+			background: rgba(0, 0, 0, 0.4);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			opacity: 0;
+			transition: opacity 0.2s ease;
+		}
+
+		.screenshot-item:hover .screenshot-overlay { opacity: 1; }
+		.screenshot-overlay svg { width: 24px; height: 24px; fill: white; }
+		.screenshot-hidden { display: none; }
+
+		.livery-viewer {
+			position: relative;
+			width: 100%;
+			border-radius: 12px;
+			overflow: hidden;
+			border: 1px solid var(--border-color);
+			background: var(--bg-tertiary);
+			margin-bottom: 0.75rem;
+		}
+
+		.livery-viewer-img {
+			width: 100%;
+			height: 280px;
+			object-fit: cover;
+			display: block;
+			transition: opacity 0.2s ease;
+		}
+
+		.livery-viewer-reg {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			padding: 0.75rem 1rem;
+			background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+			font-size: 1rem;
+			font-weight: 600;
+			font-family: 'SF Mono', SFMono-Regular, Consolas, monospace;
+			color: #ffffff;
+			letter-spacing: 0.06em;
+		}
+
+		.livery-arrow {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 36px;
+			height: 36px;
+			background: rgba(0, 0, 0, 0.55);
+			backdrop-filter: blur(8px);
+			-webkit-backdrop-filter: blur(8px);
+			border: 1px solid rgba(255, 255, 255, 0.15);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			z-index: 5;
+			transition: background 0.2s ease;
+			padding: 0;
+		}
+
+		.livery-arrow:hover { background: rgba(0, 0, 0, 0.8); }
+		.livery-arrow-left { left: 0.75rem; }
+		.livery-arrow-right { right: 0.75rem; }
+		.livery-arrow svg { width: 18px; height: 18px; fill: #ffffff; }
+
+		.livery-dots {
+			display: flex;
+			justify-content: center;
+			gap: 0.375rem;
+		}
+
+		.livery-dot {
+			width: 6px;
+			height: 6px;
+			border-radius: 3px;
+			background: var(--border-color);
+			cursor: pointer;
+			transition: all 0.2s ease;
+			border: none;
+			padding: 0;
+		}
+
+		.livery-dot.active {
+			background: var(--text-primary);
+			width: 18px;
+		}
+
+		/* Team / People */
+		.team-section { margin-bottom: 2.5rem; }
+
+		.team-section-header {
+			font-size: 0.7rem;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+			color: var(--text-tertiary);
+			margin-bottom: 1rem;
+			padding-bottom: 0.75rem;
+			border-bottom: 1px solid var(--border-color);
+		}
+
+		.team-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+			gap: 1rem;
+		}
+
+		.person-card {
+			background: var(--bg-glass);
+			border: 1px solid var(--border-color);
+			border-radius: 14px;
+			overflow: hidden;
+			cursor: pointer;
+			transition: all 0.2s ease;
+		}
+
+		.person-card:hover {
+			background: rgba(255, 255, 255, 0.08);
+			transform: translateY(-2px);
+		}
+
+		.person-photo {
+			width: 100%;
+			aspect-ratio: 1 / 1;
+			overflow: hidden;
+			background: var(--bg-tertiary);
+			position: relative;
+		}
+
+		.person-photo img {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform 0.4s ease;
+		}
+
+		.person-card:hover .person-photo img { transform: scale(1.05); }
+
+		.person-photo svg {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 52px;
+			height: 52px;
+			fill: var(--text-tertiary);
+			opacity: 0.3;
+		}
+
+		.person-card-body { padding: 1rem; }
+
+		.person-name {
+			font-size: 0.9375rem;
+			font-weight: 600;
+			color: var(--text-primary);
+			margin-bottom: 0.125rem;
+		}
+
+		.person-role {
+			font-size: 0.6875rem;
+			color: var(--text-tertiary);
+			text-transform: uppercase;
+			letter-spacing: 0.06em;
+			margin-bottom: 0.625rem;
+		}
+
+		.person-bio-short {
+			font-size: 0.8125rem;
+			color: var(--text-secondary);
+			line-height: 1.55;
+			margin-bottom: 0.75rem;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			line-clamp: 3;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
+
+		.person-links { display: flex; gap: 0.375rem; align-items: center; }
+
+		.person-link-icon {
+			width: 28px;
+			height: 28px;
+			border-radius: 7px;
+			background: rgba(255, 255, 255, 0.05);
+			border: 1px solid var(--border-color);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--text-tertiary);
+			text-decoration: none;
+			transition: all 0.2s ease;
+			flex-shrink: 0;
+		}
+
+		.person-link-icon:hover {
+			background: rgba(255, 255, 255, 0.12);
+			color: var(--text-primary);
+			border-color: rgba(255, 255, 255, 0.2);
+		}
+
+		.person-link-icon svg { width: 13px; height: 13px; fill: currentColor; }
+
+		/* Person Modal */
+		.person-modal-header {
+			margin-bottom: 1.75rem;
+		}
+
+		.person-modal-photo {
+			width: calc(100% + 4rem);
+			height: 300px;
+			border-radius: 18px 18px 0 0;
+			overflow: hidden;
+			border: none;
+			background: var(--bg-tertiary);
+			position: relative;
+			margin: -2rem -2rem 1.25rem -2rem;
+		}
+
+		.person-modal-photo img {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.person-modal-photo svg {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 56px;
+			height: 56px;
+			fill: var(--text-tertiary);
+			opacity: 0.3;
+		}
+
+		.person-modal-tier {
+			font-size: 0.6875rem;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+			color: var(--text-tertiary);
+			margin-bottom: 0.25rem;
+		}
+
+		.person-modal-info h2 {
+			font-size: 1.5rem;
+			font-weight: 600;
+			letter-spacing: -0.02em;
+			margin-bottom: 0.25rem;
+		}
+
+		.person-modal-role {
+			font-size: 0.875rem;
+			color: var(--text-secondary);
+			margin-bottom: 1rem;
+		}
+
+		.person-modal-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+		.person-modal-link {
+			display: flex;
+			align-items: center;
+			gap: 0.375rem;
+			padding: 0.375rem 0.75rem;
+			background: rgba(255, 255, 255, 0.05);
+			border: 1px solid var(--border-color);
+			border-radius: 8px;
+			font-size: 0.8125rem;
+			color: var(--text-secondary);
+			text-decoration: none;
+			transition: all 0.2s ease;
+		}
+
+		.person-modal-link:hover { background: rgba(255, 255, 255, 0.1); color: var(--text-primary); }
+		.person-modal-link svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
+
+		.person-modal-bio {
+			font-size: 0.9375rem;
+			color: var(--text-secondary);
+			line-height: 1.7;
+		}
+
+		.section-sub-header {
+			font-size: 1.125rem;
+			font-weight: 600;
+			letter-spacing: -0.01em;
+			color: var(--text-primary);
+			margin-bottom: 0.375rem;
+		}
+
+		.section-sub-desc {
+			font-size: 0.9375rem;
+			color: var(--text-tertiary);
+			margin-bottom: 1.25rem;
+		}
+
+		.article-body p {
+			margin-bottom: 1rem;
+			color: var(--text-secondary);
+			font-size: 0.9375rem;
+			line-height: 1.75;
+		}
+
+		.person-tags {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.3rem;
+			margin-top: 0.625rem;
+		}
+
+		.person-tag {
+			font-size: 0.625rem;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 0.06em;
+			padding: 0.2rem 0.5rem;
+			background: rgba(255, 255, 255, 0.06);
+			border: 1px solid var(--border-color);
+			border-radius: 5px;
+			color: var(--text-tertiary);
+		}
+
+		.article-lead {
+			font-size: 1rem;
+			color: var(--text-primary) !important;
+			border-left: 2px solid rgba(255, 255, 255, 0.2);
+			padding-left: 1.25rem;
+			margin-bottom: 1.25rem !important;
 		}
 
 		/* Responsive - Tablet */
@@ -1121,7 +1620,6 @@
 					<li><a href="#hangar" class="nav-link">Hangar</a></li>
 					<li><a href="#gallery" class="nav-link">Gallery</a></li>
 					<li><a href="#videos" class="nav-link">Videos</a></li>
-					<li><a href="#contact" class="nav-link">Contact</a></li>
 				</ul>
 			</nav>
 			<button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
@@ -1155,10 +1653,6 @@
 						<svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
 						Videos
 					</a>
-					<a href="#contact" class="sidebar-link">
-						<svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-						Contact
-					</a>
 				</nav>
 			</div>
 			<div class="sidebar-section">
@@ -1189,12 +1683,12 @@
 				<div class="panel">
 					<div class="panel-header">
 						<span class="panel-title">In Development</span>
-						<span class="panel-badge badge-info">Beta</span>
+						<span class="panel-badge badge-success">Just Landed</span>
 					</div>
 					<div class="panel-content">
 						<div class="aircraft-card" style="border: none; background: transparent;">
-							<div class="aircraft-card-image">
-								<img src="images/aircraft/C680/C680_BG.png" alt="Cessna Citation C680 Sovereign+" onerror="this.parentElement.style.background='linear-gradient(135deg, rgba(28, 28, 30, 0.8), rgba(44, 44, 46, 0.6))'">
+							<div class="aircraft-card-image" style="height: 320px; border-radius: 0 0 12px 12px;">
+								<img src="images/common/C680_Preview.png" alt="Cessna Citation C680 Sovereign+" onerror="this.parentElement.style.background='linear-gradient(135deg, rgba(28, 28, 30, 0.8), rgba(44, 44, 46, 0.6))'">
 							</div>
 							<div class="aircraft-card-body" style="padding: 1.25rem 0 0 0;">
 								<div class="aircraft-card-header">
@@ -1206,74 +1700,54 @@
 					</div>
 				</div>
 
-				<div class="news-embed" data-title="Latest News" data-url="https://fsnews.eu/skyward-simulations-shares-development-update-on-citation-sovereign-for-msfs/"></div>
-				<div class="news-embed" data-title="Latest News" data-url="https://fsnews.eu/skyward-announces-citation-c680-sovereign-for-msfs/"></div>
-				<div class="news-embed" data-title="Latest News" data-url="https://fsnews.eu/skyward-sim-release-da50rg/"></div>
-				<div class="news-embed" data-title="Latest News" data-url="https://fsnews.eu/skyward-simulations-announces-diamond-da50-rg-for-msfs/"></div>
 
 				<div class="footer">
 					<p>2024 Skyward Simulations. All rights reserved.</p>
-				</div>
+					</div>
 			</section>
 
 			<!-- About Section -->
 			<section id="about" class="content-section">
 				<div class="page-header">
-					<h1 class="page-title">Built for realism</h1>
-					<p class="page-subtitle">Every aircraft is meticulously engineered with real-world data and cutting-edge simulation technology.</p>
+					<h1 class="page-title">About Skyward</h1>
 				</div>
 
-				<div class="stats-grid">
-					<div class="stat-card">
-						<div class="stat-card-icon">
-							<svg viewBox="0 0 24 24"><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
-						</div>
-						<div class="stat-card-value">100%</div>
-						<div class="stat-card-label">Systems Accuracy</div>
-					</div>
-					<div class="stat-card">
-						<div class="stat-card-icon">
-							<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-						</div>
-						<div class="stat-card-value">4K</div>
-						<div class="stat-card-label">Texture Resolution</div>
-					</div>
-					<div class="stat-card">
-						<div class="stat-card-icon">
-							<svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
-						</div>
-						<div class="stat-card-value">2</div>
-						<div class="stat-card-label">Aircraft Available</div>
-					</div>
+				<div style="color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.75; margin-bottom: 2rem; text-align: justify; display: flex; flex-direction: column; gap: 1rem;">
+					<p>Skyward Simulations is an independent flight simulation development studio founded in 2024 by Lucas Winter. Our mission is simple: to create highly detailed, authentic aircraft simulations that raise the standard of realism within the flight simulation industry.</p>
+					<p>The flight simulation community has long sought aircraft that go beyond surface-level accuracy. At Skyward Simulations, we believe that true immersion comes from meticulous attention to detail, deep technical research, and a commitment to recreating aircraft as faithfully as possible. Every project we undertake is driven by a passion for aviation and a desire to deliver products that both enthusiasts and professionals can appreciate.</p>
+					<p>To achieve this level of realism, we work directly with real-world pilots, engineers, and maintenance technicians throughout the entire development process. Their knowledge and experience help us validate aircraft behavior, system logic, operational procedures, and performance characteristics. In many cases, these industry professionals are involved before any modeling or coding work begins, allowing us to establish a solid foundation of technical accuracy from the very start.</p>
+					<p>Our research process is extensive. We spend countless hours studying aircraft flight manuals, maintenance documentation, wiring diagrams, system schematics, blueprints, operational procedures, and other technical references. It is not uncommon for our team to work through thousands of pages of documentation to fully understand how an aircraft operates before a single feature is implemented. This dedication ensures that every system behaves as realistically as possible and reflects the complexity of the real aircraft.</p>
+					<p>What sets Skyward Simulations apart is the direct involvement of every member of our team. Our developers are deeply engaged in each project, contributing ideas, expertise, and feedback throughout development. This collaborative environment allows us to continuously refine our products and maintain the highest standards of quality.</p>
+					<p>As we continue to grow, our goal remains clear: to become a trusted name in flight simulation by delivering aircraft that combine technical accuracy, immersive functionality, and exceptional attention to detail. We are committed to pushing the boundaries of what is possible in flight simulation and helping shape the future of the hobby we all enjoy.</p>
+					<p>We are always interested in connecting with individuals who share our passion for aviation and simulation. Whether you are a developer, pilot, engineer, technician, researcher, artist, or simply someone with a strong interest in creating the next generation of flight simulation products, we would be delighted to hear from you. The industry needs more passionate people dedicated to building truly authentic aircraft simulations, and we are always open to expanding our team with like-minded individuals who share our vision.</p>
 				</div>
 
-				<div class="feature-list">
-					<div class="feature-item">
-						<div class="feature-icon">
-							<svg viewBox="0 0 24 24"><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65z"/></svg>
-						</div>
-						<div class="feature-content">
-							<h3>Authentic Systems</h3>
-							<p>Every switch, gauge, and system is modeled after real aircraft specifications with unprecedented accuracy and attention to detail.</p>
-						</div>
-					</div>
-					<div class="feature-item">
-						<div class="feature-icon">
-							<svg viewBox="0 0 24 24"><path d="M13 2.05v2.02c3.95.49 7 3.85 7 7.93 0 3.21-1.92 6-4.72 7.28L13 17v5h5l-1.22-1.22C19.91 19.07 22 15.76 22 12c0-5.18-3.95-9.45-9-9.95zM11 2.05C5.94 2.55 2 6.81 2 12c0 3.76 2.09 7.07 5.22 8.78L6 22h5v-5l-2.28 2.28C6.92 18 5 15.21 5 12c0-4.08 3.05-7.44 7-7.93V2.05z"/></svg>
-						</div>
-						<div class="feature-content">
-							<h3>Performance Focused</h3>
-							<p>Optimized for smooth performance across all hardware configurations while maintaining the highest visual and system fidelity.</p>
-						</div>
-					</div>
-					<div class="feature-item">
-						<div class="feature-icon">
-							<svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
-						</div>
-						<div class="feature-content">
-							<h3>Immersive Experience</h3>
-							<p>From engine startup sequences to realistic flight dynamics, every moment in the cockpit feels authentic and engaging.</p>
-						</div>
+				<!-- Team -->
+				<div style="margin-top: 2.5rem; margin-bottom: 0.5rem;">
+					<div class="section-sub-header">Our Team</div>
+				</div>
+
+				<div class="team-section">
+					<div class="team-section-header">Partners</div>
+					<div class="team-grid" id="team-partners"></div>
+				</div>
+
+				<div class="team-section">
+					<div class="team-section-header">Associates</div>
+					<div class="team-grid" id="team-associate"></div>
+				</div>
+
+				<!-- Contact (merged) -->
+				<div style="margin-top: 2.5rem; margin-bottom: 1.25rem;">
+					<div class="section-sub-header">Get in touch</div>
+					<div class="section-sub-desc">Questions about our aircraft or interested in our latest developments?</div>
+				</div>
+
+				<div class="contact-grid">
+					<div class="contact-card">
+						<h3>Discord</h3>
+						<p>Join our community for support, development updates, and to connect with other virtual pilots.</p>
+						<p><a href="https://discord.gg/w4Qz9kTdgd" target="_blank">Skyward Simulations Discord</a></p>
 					</div>
 				</div>
 
@@ -1290,6 +1764,45 @@
 				</div>
 
 				<div class="aircraft-list">
+					<div class="aircraft-card" onclick="openAircraftModal('c680')">
+						<div class="aircraft-card-image">
+							<img src="images/aircraft/C680/Thumbnail/Thumbnail.png" alt="Cessna Citation C680 Sovereign+" onerror="this.parentElement.style.background='linear-gradient(135deg, rgba(28, 28, 30, 0.8), rgba(44, 44, 46, 0.6))'">
+						</div>
+						<div class="aircraft-card-body">
+							<div class="aircraft-card-header">
+								<span class="aircraft-card-name">Cessna Citation C680 Sovereign+</span>
+								<span class="panel-badge badge-success">Just Landed</span>
+							</div>
+							<p class="aircraft-card-desc">The most realistic business jet simulation for Microsoft Flight Simulator. Built from real-world references with 600+ electrical circuits, 300 buses, 1,200 wiring lines, full CPDLC/ACARS datalink, and validated by pilots who fly the 680 type every day.</p>
+							<div class="aircraft-card-stats">
+								<div class="aircraft-stat">
+									<div class="aircraft-stat-value">G5000</div>
+									<div class="aircraft-stat-label">Avionics</div>
+								</div>
+								<div class="aircraft-stat">
+									<div class="aircraft-stat-value">305kts / M 0.80</div>
+									<div class="aircraft-stat-label">Max Speed</div>
+								</div>
+								<div class="aircraft-stat">
+									<div class="aircraft-stat-value">3,000 nm</div>
+									<div class="aircraft-stat-label">Range</div>
+								</div>
+								<div class="aircraft-stat">
+									<div class="aircraft-stat-value">47'000 ft</div>
+									<div class="aircraft-stat-label">Service Ceiling</div>
+								</div>
+								<div class="aircraft-stat">
+									<div class="aircraft-stat-value">3'530 ft</div>
+									<div class="aircraft-stat-label">Required Runway Length</div>
+								</div>
+								<div class="aircraft-stat">
+									<div class="aircraft-stat-value">JET A-1</div>
+									<div class="aircraft-stat-label">Fuel Grades</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
 					<div class="aircraft-card" onclick="openAircraftModal('da50')">
 						<div class="aircraft-card-image">
 							<img src="images/aircraft/DA50/DA50_BG.jpg" alt="Diamond DA50 RG" onerror="this.parentElement.style.background='linear-gradient(135deg, rgba(28, 28, 30, 0.8), rgba(44, 44, 46, 0.6))'">
@@ -1328,45 +1841,6 @@
 							</div>
 						</div>
 					</div>
-
-					<div class="aircraft-card" onclick="openAircraftModal('c680')">
-						<div class="aircraft-card-image">
-							<img src="images/aircraft/C680/C680_BG.png" alt="Cessna Citation C680 Sovereign+" onerror="this.parentElement.style.background='linear-gradient(135deg, rgba(28, 28, 30, 0.8), rgba(44, 44, 46, 0.6))'">
-						</div>
-						<div class="aircraft-card-body">
-							<div class="aircraft-card-header">
-								<span class="aircraft-card-name">Cessna Citation C680 Sovereign+</span>
-								<span class="panel-badge badge-info">Beta</span>
-							</div>
-							<p class="aircraft-card-desc">Mid-size business jet featuring the advanced Garmin G5000 flightdeck with integrated ACARS and CPDLC datalink communications. Detailed systems modeling with over 170 individual electrical circuits.</p>
-							<div class="aircraft-card-stats">
-								<div class="aircraft-stat">
-									<div class="aircraft-stat-value">G5000</div>
-									<div class="aircraft-stat-label">Avionics</div>
-								</div>
-								<div class="aircraft-stat">
-									<div class="aircraft-stat-value">305kts / M 0.80</div>
-									<div class="aircraft-stat-label">Max Speed</div>
-								</div>
-								<div class="aircraft-stat">
-									<div class="aircraft-stat-value">3,000 nm</div>
-									<div class="aircraft-stat-label">Range</div>
-								</div>
-								<div class="aircraft-stat">
-									<div class="aircraft-stat-value">47'000 ft</div>
-									<div class="aircraft-stat-label">Service Ceiling</div>
-								</div>
-								<div class="aircraft-stat">
-									<div class="aircraft-stat-value">3'530 ft</div>
-									<div class="aircraft-stat-label">Required Runway Length</div>
-								</div>
-								<div class="aircraft-stat">
-									<div class="aircraft-stat-value">JET A-1</div>
-									<div class="aircraft-stat-label">Fuel Grades</div>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 
 				<div class="footer">
@@ -1386,14 +1860,6 @@
 					<div class="gallery-loading">Loading gallery...</div>
 				</div>
 
-				<div id="galleryLightbox" class="lightbox">
-					<div class="lightbox-content">
-						<button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-						<img id="lightboxImage" src="" alt="Full size image">
-						<div id="lightboxCaption" class="lightbox-caption"></div>
-					</div>
-				</div>
-
 				<div class="footer">
 					<p>2024 Skyward Simulations. All rights reserved.</p>
 				</div>
@@ -1409,8 +1875,13 @@
 				<div class="video-grid">
 					<div class="video-card">
 						<div class="video-container">
-							<!-- Replace VIDEO_ID_4 with actual YouTube video ID -->
-							<iframe src="https://youtu.be/Hd3btsQsAZQ?si=u85V4_ZgAdH9ksuM" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+							<iframe src="https://www.youtube.com/embed/grA6ymii92Q?start=5022" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+						</div>
+					</div>
+
+					<div class="video-card">
+						<div class="video-container">
+							<iframe src="https://www.youtube.com/embed/NIsExdlLokw" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 						</div>
 					</div>
 
@@ -1448,35 +1919,24 @@
 				</div>
 			</section>
 
-			<!-- Contact Section -->
-			<section id="contact" class="content-section">
-				<div class="page-header">
-					<h1 class="page-title">Get in touch</h1>
-					<p class="page-subtitle">Questions about our aircraft or interested in our latest developments?</p>
-				</div>
-
-				<div class="contact-grid">
-					<div class="contact-card">
-						<h3>Support</h3>
-						<p>Contact our technical support team for assistance with installations, troubleshooting, or product questions.</p>
-						<p><a href="https://discord.gg/w4Qz9kTdgd" target="_blank">Skyward Simulations Discord</a></p>
-					</div>
-					<div class="contact-card">
-						<h3>Community</h3>
-						<p>Join our community to connect with other virtual pilots and share your flying experiences.</p>
-						<p><a href="https://discord.gg/w4Qz9kTdgd" target="_blank">Skyward Simulations Discord</a></p>
-					</div>
-					<div class="contact-card">
-						<h3>Lucas Winter, CEO</h3>
-						<p>Contact me at <a href="mailto:lucas.sascha.winter@gmail.com">lucas.sascha.winter@gmail.com</a></p>
-					</div>
-				</div>
-
-				<div class="footer">
-					<p>2024 Skyward Simulations. All rights reserved.</p>
-				</div>
-			</section>
 		</main>
+	</div>
+
+	<!-- Gallery Lightbox -->
+	<div id="galleryLightbox" class="lightbox">
+		<div class="lightbox-content">
+			<button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+			<img id="lightboxImage" src="" alt="Full size image">
+			<div id="lightboxCaption" class="lightbox-caption"></div>
+		</div>
+	</div>
+
+	<!-- Person Details Modal -->
+	<div id="personModal" class="modal">
+		<div class="modal-content">
+			<button class="modal-close" onclick="closePersonModal()">×</button>
+			<div id="personModalBody"></div>
+		</div>
 	</div>
 
 	<!-- Aircraft Details Modal -->
@@ -1612,29 +2072,164 @@
 			},
 			c680: {
 				name: 'Cessna Citation C680 Sovereign+',
-				status: 'Beta',
-				statusClass: 'badge-info',
-				image: 'images/aircraft/C680/C680_BG.png',
+				status: 'Just Landed',
+				statusClass: 'badge-success',
+				image: 'images/aircraft/C680/Thumbnail/Thumbnail.png',
 				specs: {
 					'Avionics': 'Garmin G5000',
 					'Engines': '2× Pratt & Whitney PW306D',
 					'Max Speed': 'Mach 0.80',
 					'Range': '3,000+ NM'
 				},
-				description: 'The latest addition to our fleet representing next-generation business jet technology. Featuring the advanced Garmin G5000 flightdeck with integrated flight management systems, ACARS, CPDLC, and comprehensive electrical system modeling with over 170 individual circuit breakers.',
+				description: 'This highly detailed simulation of the Citation Sovereign+ has been developed with a strong emphasis on system fidelity, flight model accuracy, engine performance, and real-world behavior. After undergoing multiple development iterations, with continuous refinement of its avionics, systems, sounds, flight model, and way more, using real-world references and structured testing from a pool consisting of over 80% pilots, many of whom fly the 680 type on a day-to-day basis.\n\nThe Sovereign+ is a mid-size business jet designed for high-altitude, high-speed cruise, strong climb performance, and operational flexibility with respect to runway performance. In this simulation, those characteristics are not guessed — they are derived from countless hours of documentation research and pilot consultation. From simulating dual-FADEC channel availability based on electrical states and other factors to an incredibly high-fidelity recreation of a Garmin CPDLC and ACARS feature set, countless hours have been poured into the many systems across the Sovereign+.',
 				features: [
-					'Garmin G5000 FD',
-					'170+ Circuits',
-					'ACARS/CPDLC',
-					'Pressurized Cabin',
-					'Advanced Systems'
+					'Expertly Vetted',
+					'High-Fidelity Flight Model',
+					'Dual-Platform Support',
+					'Garmin G5000 Suite',
+					'Advanced Electrical Architecture',
+					'Deep FADEC Simulation',
+					'Logic-Driven CAS',
+					'Pro-Grade Datalink',
+					'Comprehensive EFB',
+					'Authentic Soundscape'
 				],
 				details: {
-					'Development': 'A meticulously engineered business jet featuring cutting-edge avionics and systems. The aircraft includes detailed systems modeling and circuit breaker representation for an authentic experience.',
-					'Avionics': 'Garmin G5000 flightdeck with integrated FMS, weather radar, traffic awareness, and datalink communications.',
-					'Systems': 'Over 170 individually modeled electrical circuits with corresponding circuit breakers, realistic hydraulic and pneumatic systems.',
-					'Features': 'Pressurized cabin, integrated stairs, detailed cockpit lighting, and authentic performance modeling.'
-				}
+					'Model': [
+						'Highly detailed exterior and interior models with accurate proportions and refined geometry',
+						'Interactive cockpit and cabin elements, including functional panels, switches, and system interfaces',
+						'Refined lighting system throughout the interior and exterior',
+						'Dynamic and static registration support',
+						'Optimized textures and level-of-detail management for consistent performance',
+						'Optional ground equipment and environmental elements to enhance immersion',
+						'All walkaround elements native to 2024 are ported to the 2020 version and can be toggled via the EFB or directly with the moved cockpit camera'
+					],
+					'Cockpit': [
+						'Fully interactive flight deck with numerous functional switches, knobs, and controls',
+						'Garmin G5000 avionics suite with custom PFD, MFD, and GTC plugins',
+						'System synoptics for electrical, fuel, and hydraulic systems',
+						'CAS messages are driven by a data bus architecture that relies on inputs from other systems and their respective electrical power states'
+					],
+					'Electrical System': [
+						'High-fidelity architecture of 300+ buses, 600+ circuits, 1,200+ wiring lines, 60+ relays, transformers, 100+ diodes, and more',
+						'Numerous simulated printed circuit boards based on real board logic documentation, processing inputs and outputs across many systems',
+						'Two 28V transformer rectifier units used in tandem with the left and right alternators to power the aircraft in the event of generator failure',
+						'Two 24V 44Ah nickel-cadmium main batteries with hot buses included',
+						'One 24V 1.17Ah nickel-cadmium standby battery to power the standby instrument',
+						'Four 24V 1.17Ah nickel-cadmium emergency batteries to power emergency lighting around the airplane',
+						'One 28.5V ground power unit to assist in electric engine-starts if required',
+						'Two permanent-magnet alternators to power the dual-channel FADEC if all remaining electrical power is lost',
+						'Two 28V DC engine-driven generators capable of delivering 100 amps of load throughout the airplane'
+					],
+					'FADEC & Engine Systems': [
+						'Accurate thrust modes, including TO, MCT, CRU, T/R, and APR',
+						'Two dual-based FADEC channels to command and monitor engines, relying on power state and sensor inputs from other data modules',
+						'Accurate calculations of takeoff, climb, and cruise thrust limits with anti-ice off and on',
+						'Accurate modeling of N1, N2, ITT, and fuel flow relationships across the flight envelope, especially during climb, cruise, and descent'
+					],
+					'Flight Model': [
+						'Tuned lift and drag coefficients for accurate climb time and fuel, cruise, and descent phases of flight'
+					],
+					'Hydraulic & Fuel Systems': [
+						'Hydraulic system governing braking, landing gear, speedbrakes, spoilers, wheel brakes, thrust reversers, and nose wheel steering',
+						'Accurate parking brake operation with the capability to toggle between realistic and unrealistic modes',
+						'Fuel system with crossfeed capability, boost pump logic, and accurate tank modeling'
+					],
+					'Bleed Air, Anti-Ice & Environmental Systems': [
+						'Detailed line and valve architecture accounting for valve power state, PCB behavior, and more',
+						'Engine and APU bleed sources with automatic selection logic based on bleed air control logic boards built to OEM specification',
+						'Integration with cabin pressurization and environmental control systems',
+						'Anti-ice system covering wings, engines, stabilizer, and windshield',
+						'Temperature monitoring, rate-based valve actuations, and state-dependent behavior influenced by aircraft conditions and system-based data'
+					],
+					'Landing Gear & Emergency Systems': [
+						'Hydraulically driven extension and retraction',
+						'Gravity-assisted deployment when hydraulic pressure is lost',
+						'Pneumatic blowdown system for emergency extension',
+						'Mechanical uplock release mechanisms via cockpit and cabin interaction',
+						'Aerodynamic influence on gear behavior during abnormal scenarios',
+						'Nitrogen emergency brake simulation'
+					],
+					'Avionics & Datalink': [
+						'Garmin G5000 avionics with full system integration',
+						'Platform-agnostic ACARS and CPDLC functionality (PC only)',
+						'D-ATIS support for FAA and VATSIM',
+						'Text NOTAMs support with active simBrief flight plan'
+					],
+					'Crew Alerting System (CAS)': [
+						'Advisory, caution, and warning messages generated based on an accurate data bus structure and system module outputs',
+						'Takeoff, landing, engine shutdown, and bus fail inhibit states'
+					],
+					'Electronic Flight Bag (EFB)': [
+						'SimBrief integration for flight plans, fuel, and weather',
+						'Weight and balance configuration with payload management',
+						'Ground services and aircraft state control',
+						'System pages, including electrical, oxygen, and configuration',
+						'Navigraph charts and flight planning tools',
+						'Over 300 checklists, including abnormal and emergency procedures referenced from the real Airplane Flight Manual'
+					],
+					'Sounds': [
+						'Custom sounds for all aircraft-related systems recorded from the real airplane by Boris Audioworks',
+						'Sound effects for all interactive elements in and outside the airplane',
+						'Volume controls for exterior and walk-around volumes'
+					],
+					'Platform Support': [
+						'Microsoft Flight Simulator 2020',
+						'Microsoft Flight Simulator 2024',
+						'The advanced electrical architecture is exclusive to MSFS 2024 as it relies on capabilities only found in the new electrical simulation. The 2020 version features a slightly modified but still highly accurate representation of the real electrical system.'
+					],
+					'Key Features': [
+						'<strong>Expertly Vetted:</strong> Developed using real-world references and tested by a group of six CE-680 pilots and technicians, along with over a dozen additional jet pilots.',
+						'<strong>High-Fidelity Flight Model:</strong> Tuned lift and drag coefficients for accurate climb, cruise, and descent performance.',
+						'<strong>Dual-Platform Support:</strong> Native versions available for both MSFS 2020 and MSFS 2024.',
+						'<strong>Garmin G5000 Suite:</strong> Fully custom PFD, MFD, and GTC plugins with integrated system synoptics.',
+						'<strong>Advanced Electrical Architecture:</strong> Simulates 300+ buses, 600+ circuits, 1,200+ wiring lines, and PCB-level logic (most advanced features exclusive to MSFS 2024).',
+						'<strong>Deep FADEC Simulation:</strong> Dual-channel FADEC commanding accurate thrust modes (TO, MCT, CRU, T/R, APR) and realistic engine relationships (N1/N2/ITT).',
+						'<strong>Complex Logistics:</strong> High-fidelity modeling of hydraulic, fuel (crossfeed/boost pumps), and bleed air systems built to OEM specifications.',
+						'<strong>Logic-Driven CAS:</strong> Crew Alerting System messages driven by real-time data bus architecture and electrical states.',
+						'<strong>Premium Visuals:</strong> Highly detailed exterior/interior models with interactive panels, switches, and refined lighting.',
+						'<strong>Walkaround Elements:</strong> Native 2024 walkaround features ported to the 2020 version.',
+						'<strong>Landing Gear Physics:</strong> Includes hydraulic extension, gravity-assisted deployment, and a pneumatic blowdown system for emergencies.',
+						'<strong>Pro-Grade Datalink:</strong> Platform-agnostic CPDLC and ACARS (PC only), D-ATIS, and Text NOTAMs.',
+						'<strong>Comprehensive EFB:</strong> SimBrief/Navigraph integration, weight and balance management, and over 300 real-world checklists.',
+						'<strong>Authentic Soundscape:</strong> Systems and environmental sounds recorded from the actual aircraft by Boris Audioworks.',
+						'<strong>Interactive Foley:</strong> Custom sound effects for every switch, knob, and interactive element.'
+					]
+				},
+				screenshots: [
+					'images/aircraft/C680/screenshots/Screenshot%20(568).png',
+					'images/aircraft/C680/screenshots/Screenshot%20(573).png',
+					'images/aircraft/C680/screenshots/Screenshot%20(575).png',
+					'images/aircraft/C680/screenshots/Screenshot%20(576).png',
+					'images/aircraft/C680/screenshots/Screenshot%20(69).png',
+					'images/aircraft/C680/screenshots/Screenshot%20(85).png',
+					'images/aircraft/C680/screenshots/Screenshot%202026-04-18%20153215.png',
+					'images/aircraft/C680/screenshots/Screenshot%202026-04-18%20163323.png',
+					'images/aircraft/C680/screenshots/Screenshot%202026-04-24%20180334.png',
+					'images/aircraft/C680/screenshots/Screenshot%202026-04-25%20131058.png',
+					'images/aircraft/C680/screenshots/Screenshot%202026-04-25%20141942.png',
+					'images/aircraft/C680/screenshots/Screenshot%202026-04-25%20142604.png',
+					'images/aircraft/C680/screenshots/Screenshot%202026-04-25%20143508.png',
+					'images/aircraft/C680/screenshots/Screenshot%202026-04-25%20144201.png',
+					'images/aircraft/C680/screenshots/Screenshot%202026-04-25%20144659.png',
+					'images/aircraft/C680/screenshots/Screenshot%202026-04-25%20150851.png',
+					'images/aircraft/C680/screenshots/Screenshot%202026-04-25%20150913.png',
+					'images/aircraft/C680/screenshots/Screenshot%202026-04-25%20151235.png',
+					'images/aircraft/C680/screenshots/Screenshot_636.png'
+				],
+				liveries: [
+					{ reg: '6A-CEV',  file: 'images/aircraft/C680/liveries/6ACEV.jpg' },
+					{ reg: '9H-SNB',  file: 'images/aircraft/C680/liveries/9HSNB.jpg' },
+					{ reg: 'D-CAID',  file: 'images/aircraft/C680/liveries/DCAID.jpg' },
+					{ reg: 'HB-SOV',  file: 'images/aircraft/C680/liveries/HBSOV.jpg' },
+					{ reg: 'N1',      file: 'images/aircraft/C680/liveries/N1.jpg' },
+					{ reg: 'N300JC',  file: 'images/aircraft/C680/liveries/N300JC.jpg' },
+					{ reg: 'N448KC',  file: 'images/aircraft/C680/liveries/N448KC.jpg' },
+					{ reg: 'N680CS',  file: 'images/aircraft/C680/liveries/N680CS.jpg' },
+					{ reg: 'N680JJ',  file: 'images/aircraft/C680/liveries/N680JJ.jpg' },
+					{ reg: 'N680VM',  file: 'images/aircraft/C680/liveries/N680VM.jpg' },
+					{ reg: 'OK-JRS',  file: 'images/aircraft/C680/liveries/OKJRS.jpg' }
+				]
 			}
 		};
 
@@ -1656,13 +2251,21 @@
 				.map(feature => `<div class="feature-tag">${feature}</div>`)
 				.join('');
 
+			const _planeIcon = `<svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>`;
 			const detailsHtml = Object.entries(aircraft.details)
-				.map(([title, content]) => `
-					<div class="modal-section">
-						<h3>${title}</h3>
-						<p>${content}</p>
-					</div>
-				`).join('');
+				.map(([title, content]) => {
+					let body;
+					if (Array.isArray(content)) {
+						if (title === 'Key Features') {
+							body = `<ul class="key-features-list">${content.map(i => `<li>${_planeIcon}<span>${i}</span></li>`).join('')}</ul>`;
+						} else {
+							body = `<ul>${content.map(i => `<li>${i}</li>`).join('')}</ul>`;
+						}
+					} else {
+						body = `<p>${content}</p>`;
+					}
+					return `<div class="modal-section"><h3>${title}</h3>${body}</div>`;
+				}).join('');
 
 			const modalBody = document.getElementById('modalBody');
 			modalBody.innerHTML = `
@@ -1682,15 +2285,37 @@
 				</div>
 				<div class="modal-section">
 					<h3>Overview</h3>
-					<p>${aircraft.description}</p>
+					${aircraft.description.split('\\n\\n').map(p => `<p>${p}</p>`).join('')}
 				</div>
-				<div>
-					<h3 style="font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem;">Features</h3>
-					<div class="features-grid">
-						${featuresHtml}
-					</div>
-				</div>
+				${aircraft.screenshots && aircraft.screenshots.length ? (() => {
+					const zoomIcon = `<svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>`;
+					const renderShot = f => `<div class="screenshot-item" onclick="openLightbox('${f}','')"><img src="${f}" loading="lazy"><div class="screenshot-overlay">${zoomIcon}</div></div>`;
+					const visible = aircraft.screenshots.slice(0, 9).map(renderShot).join('');
+					const hidden  = aircraft.screenshots.slice(9).map(f => renderShot(f).replace('class="screenshot-item"','class="screenshot-item screenshot-hidden"')).join('');
+					const moreBtn = aircraft.screenshots.length > 9 ? `<button class="btn btn-ghost" style="margin-top:0.75rem;width:100%;font-size:0.8125rem;" onclick="this.previousElementSibling.querySelectorAll('.screenshot-hidden').forEach(e=>e.classList.remove('screenshot-hidden'));this.remove()">Show all ${aircraft.screenshots.length} screenshots</button>` : '';
+					return `<div class="modal-section"><h3>Screenshots</h3><div class="screenshots-grid">${visible}${hidden}</div>${moreBtn}</div>`;
+				})() : ''}
 				${detailsHtml}
+				${aircraft.liveries && aircraft.liveries.length ? (() => {
+					const mid = Math.floor(aircraft.liveries.length / 2);
+					_liveryList = aircraft.liveries;
+					_liveryIdx  = mid;
+					const l = aircraft.liveries[mid];
+					const dots = aircraft.liveries.map((_, i) =>
+						`<button class="livery-dot${i === mid ? ' active' : ''}" onclick="liveryGoto(${i})"></button>`
+					).join('');
+					return `
+					<div class="modal-section">
+						<h3>Liveries</h3>
+						<div class="livery-viewer">
+							<img id="liveryMainImg" class="livery-viewer-img" src="${l.file}" alt="${l.reg}" onerror="this.style.opacity='0'">
+							<div class="livery-viewer-reg" id="liveryMainReg">${l.reg}</div>
+							<button class="livery-arrow livery-arrow-left" onclick="liveryNav(-1)"><svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg></button>
+							<button class="livery-arrow livery-arrow-right" onclick="liveryNav(1)"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></button>
+						</div>
+						<div class="livery-dots" id="liveryDots">${dots}</div>
+					</div>`;
+				})() : ''}
 				<div class="modal-actions">
 					<a href="https://discord.gg/w4Qz9kTdgd" target="_blank" class="btn btn-primary">Join Discord</a>
 					<button onclick="closeAircraftModal()" class="btn btn-ghost">Close</button>
@@ -1702,6 +2327,30 @@
 
 		function closeAircraftModal() {
 			document.getElementById('aircraftModal').classList.remove('active');
+		}
+
+		let _liveryList = [];
+		let _liveryIdx  = 0;
+
+		function liveryNav(dir) {
+			_liveryIdx = (_liveryIdx + dir + _liveryList.length) % _liveryList.length;
+			_liveryUpdate();
+		}
+
+		function liveryGoto(idx) {
+			_liveryIdx = idx;
+			_liveryUpdate();
+		}
+
+		function _liveryUpdate() {
+			const l   = _liveryList[_liveryIdx];
+			const img = document.getElementById('liveryMainImg');
+			const reg = document.getElementById('liveryMainReg');
+			if (img) { img.style.opacity = '0'; img.src = l.file; img.onload = () => img.style.opacity = '1'; img.alt = l.reg; }
+			if (reg) reg.textContent = l.reg;
+			document.querySelectorAll('.livery-dot').forEach((d, i) =>
+				d.classList.toggle('active', i === _liveryIdx)
+			);
 		}
 
 		// Gallery Lightbox Functions
@@ -1727,6 +2376,9 @@
 			});
 			document.getElementById('galleryLightbox')?.addEventListener('click', function(e) {
 				if (e.target === this) closeLightbox();
+			});
+			document.getElementById('personModal')?.addEventListener('click', function(e) {
+				if (e.target === this) closePersonModal();
 			});
 
 			// Auto-generate news embed panels
@@ -1754,9 +2406,189 @@
 			if (e.key === 'Escape') {
 				closeAircraftModal();
 				closeLightbox();
+				closePersonModal();
 				document.getElementById('navLinks').classList.remove('open');
 			}
 		});
+
+		// ─── People / Team ────────────────────────────────────────────────────────
+		// Add entries here to populate the team section.
+		// tier: 'senior-partner' | 'partner' | 'associate'
+		// photo: image path string, or null for a placeholder silhouette
+		// socials: [{ type, url, label }]  types: discord twitter linkedin github instagram
+		const peopleData = [
+			{
+				id: 'lucas_winter',
+				tier: 'senior-partner',
+				name: 'Lucas Winter',
+				role: 'Founder & Managing Partner',
+				photo: 'images/team/Profile_Lucas_Winter.jpeg',
+				shortBio: 'Founder and CEO of Skyward Simulations. Physics Student at ETH Zurich with a passion for aviation.',
+				longBio: 'I am a physics student at ETH Zurich with a lifelong passion for aviation and programming. I founded Skyward Simulations in 2024 in an effort to recreate my favorite aircraft, the Citation C680 Sovereign+ for Mircrosoft Flight Simulator. \n\nIn an effort to satisfy my obsession wiht physics, I approach flight simulation with a focus on realism and attention to detail, striving to create aircraft that not only look authentic but also behave in a way that closely matches their real-world counterparts. I am particularly interested in the systems that rely on complex interactions of physics and engineering, such as accurate vibratuion modeling, thermodynamics, fluid dynamics and electrodynamics. \n\nWhen I\'m not studying for my degree in physics or taking care of the business and development side of Skyward Simulations, I enjoy flying at my local airfield, sailing 29er\s on Lake Zurich and playing golf.',
+				email: null,
+				socials: [
+					{ type: 'email', url: 'mailto:lucas.sascha.winter@gmail.com', label: 'lucas.sascha.winter@gmail.com' },
+					{ type: 'linkedin', url: 'https://www.linkedin.com/in/lucas-alex-winter/', label: 'LinkedIn' },
+					{ type: 'github', url: 'https://github.com/LucasWinter73', label: 'GitHub' }
+				],
+				tags: ['C680', 'DA50']
+			},
+			{
+				id: 'elias_severholt',
+				tier: 'senior-partner',
+				name: 'Elias Severholt',
+				role: 'Avionics System Developer',
+				photo: 'images/team/Profile_elias_severholt.png',
+				shortBio: "Studying MSc in Aerospace Engineering with a passion for competition gliding and flight simulation.",
+				longBio: "I have had a long dream of becoming a pilot, I received my first flight simulator as a gift when I turned six years old, since then the obsession grew. I took a glider pilot license at 16 years old and today I am competing internationally with the Swedish national gliding team on world & european gliding championships with a gold medal in the Swedish nationals. \n\nDuring my later school years I felt that engineering combined with aviation was the most rewarding for me, hence I start a masters programme at the Royal Institute of Technology in Stockholm with a focus on aerospace engineering. I will have my masters degree in spring 2027. \n\nFlight simulation is a perfect combination between engineering and aviation, there is something special about replicating something so complex and intricate and succeeding in it. Definitely one of the most rewarding feelings there is when you see the system you created act as the same real-life counterpart.",
+				email: null,
+				socials: [
+					{ type: 'email', url: 'mailto:elias@sevionics.aero', label: 'elias@sevionics.aero' },
+					{ type: 'linkedin', url: 'https://www.linkedin.com/in/elias-severholt-fourati/', label: 'LinkedIn' },
+					{ type: 'github', url: 'https://github.com/eliasseverholt', label: 'GitHub' },
+					{ type: 'website', url: 'https://www.sevionics.aero', label: 'sevionics.aero' }
+				],
+				tags: ['C680']
+			},
+			// ── Partners ────────────────────────────────────────────────────────
+			{
+				id: 'kris',
+				tier: 'partner',
+				name: 'Kris',
+				role: 'System Engineer and C680 Pilot',
+				photo: 'images/team/Profile_Kris.jpg',   // 'images/team/filename.jpg' or null
+				shortBio: 'Professional pilot, flight instructor, and aviation leader bridging real-world C680 operations with simulator development to deliver authentic, training-grade aircraft experiences.',
+				longBio: 'I am a professional pilot, flight instructor, and aviation enthusiast with a lifelong passion for both flying and technology. My interest in aviation began long before I entered a real cockpit and was heavily influenced by flight simulation, dating back to Microsoft Flight Simulator 98. Since then, I have spent countless hours exploring virtual aviation, learning aircraft systems, navigation, procedures, and the operational side of flying. \n\nAs my aviation career progressed, I transitioned from simulation to real-world flying, gaining experience as a flight instructor, corporate pilot, and aviation leader. This combination of simulator experience and professional flight operations gives me a unique perspective on what makes a flight simulation product both realistic and enjoyable. I understand the needs of users ranging from casual enthusiasts to pilots seeking meaningful training value. \n\nMy background in aviation training, safety, and operational decision-making allows me to approach simulator development with a focus on realism, usability, and education. I am particularly interested in creating systems that bridge the gap between gaming and real-world aviation by incorporating authentic procedures, operational challenges, career progression, and human factors into the simulation experience. \n\nWhether developing software, designing training scenarios, or building aviation-focused tools, my goal is to create products that inspire the same passion for aviation that flight simulation sparked in me nearly three decades ago.',
+				email: null,
+				socials: [],
+				tags: ['C680'],
+				photoPosition: '18%'
+			},
+			// ── Associates ───────────────────────────────────────────────────────
+			// {
+			// 	id: 'associate_example',
+			// 	tier: 'associate',
+			// 	name: 'First Last',
+			// 	role: 'Role Title',
+			// 	photo: null,
+			// 	shortBio: 'Short bio.',
+			// 	longBio: 'Full biography.',
+			// 	email: null,
+			// 	socials: [],
+			// 	tags: []
+			// },
+		];
+
+		const _socialPaths = {
+			email:     'M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z',
+			website:   'M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.9 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.66-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z',
+			discord:   'M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z',
+			twitter:   'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z',
+			linkedin:  'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z',
+			github:    'M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12',
+			instagram: 'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z'
+		};
+
+		const _personPlaceholder = '<svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>';
+
+		function _personPhoto(photo, name, fit, position) {
+			if (!photo) return _personPlaceholder;
+			const styles = [];
+			if (fit) styles.push(`object-fit:${fit}`);
+			if (position) {
+				const pos = position.trim().includes(' ') ? position : `center ${position}`;
+				styles.push(`object-position:${pos}`);
+			}
+			const style = styles.length ? ` style="${styles.join(';')}"` : '';
+			return `<img src="${photo}" alt="${name}" loading="lazy"${style} onerror="this.replaceWith(document.createRange().createContextualFragment('${_personPlaceholder.replace(/'/g, "\\'")}'))">`;
+		}
+
+		function _personLinks(person, modal) {
+			const out = [];
+			if (person.email) {
+				const icon = `<svg viewBox="0 0 24 24"><path d="${_socialPaths.email}"/></svg>`;
+				out.push(modal
+					? `<a href="mailto:${person.email}" class="person-modal-link" onclick="event.stopPropagation()">${icon}${person.email}</a>`
+					: `<a href="mailto:${person.email}" class="person-link-icon" title="${person.email}" onclick="event.stopPropagation()">${icon}</a>`
+				);
+			}
+			(person.socials || []).forEach(s => {
+				const path = _socialPaths[s.type];
+				if (!path) return;
+				const icon = `<svg viewBox="0 0 24 24"><path d="${path}"/></svg>`;
+				out.push(modal
+					? `<a href="${s.url}" target="_blank" rel="noopener" class="person-modal-link" onclick="event.stopPropagation()">${icon}${s.label || s.type}</a>`
+					: `<a href="${s.url}" target="_blank" rel="noopener" class="person-link-icon" title="${s.label || s.type}" onclick="event.stopPropagation()">${icon}</a>`
+				);
+			});
+			return out.join('');
+		}
+
+		function _renderPeopleInto(el, people) {
+			if (!people.length) {
+				el.innerHTML = '<p style="color:var(--text-tertiary);font-size:0.8125rem;padding:0.25rem 0;">No members yet.</p>';
+				return;
+			}
+			el.innerHTML = people.map(p => {
+				const links = _personLinks(p, false);
+				const tags = (p.tags || []).map(t => `<span class="person-tag">${t}</span>`).join('');
+				return `
+					<div class="person-card" onclick="openPersonModal('${p.id}')">
+						<div class="person-photo">${_personPhoto(p.photo, p.name, p.photoFit, p.photoPosition)}</div>
+						<div class="person-card-body">
+							<div class="person-name">${p.name}</div>
+							<div class="person-role">${p.role}</div>
+							<div class="person-bio-short">${p.shortBio}</div>
+							${links ? `<div class="person-links">${links}</div>` : ''}
+							${tags ? `<div class="person-tags">${tags}</div>` : ''}
+						</div>
+					</div>`;
+			}).join('');
+		}
+
+		function renderTeam() {
+			const partnersEl = document.getElementById('team-partners');
+			if (partnersEl) _renderPeopleInto(partnersEl, peopleData.filter(p => p.tier === 'senior-partner' || p.tier === 'partner'));
+
+			const assocEl = document.getElementById('team-associate');
+			if (assocEl) _renderPeopleInto(assocEl, peopleData.filter(p => p.tier === 'associate'));
+		}
+
+		function openPersonModal(id) {
+			const p = peopleData.find(x => x.id === id);
+			if (!p) return;
+			const tierLabel = { 'senior-partner': 'Senior Partner', 'partner': 'Partner', 'associate': 'Associate' }[p.tier] || p.tier;
+			const links = _personLinks(p, true);
+			const tags = (p.tags || []).map(t => `<span class="person-tag">${t}</span>`).join('');
+			const bioHtml = (p.longBio || '').split('\n\n').map(para =>
+				`<p class="person-modal-bio" style="margin-bottom:0.75rem;">${para.replace(/\n/g, '<br>')}</p>`
+			).join('');
+			document.getElementById('personModalBody').innerHTML = `
+				<div class="person-modal-header">
+					<div class="person-modal-photo">${_personPhoto(p.photo, p.name, p.photoFit, p.photoPosition)}</div>
+					<div class="person-modal-info">
+						<div class="person-modal-tier">${tierLabel}</div>
+						<h2>${p.name}</h2>
+						<div class="person-modal-role">${p.role}</div>
+						${tags ? `<div class="person-tags" style="margin-bottom: 0.75rem;">${tags}</div>` : ''}
+						${links ? `<div class="person-modal-links">${links}</div>` : ''}
+					</div>
+				</div>
+				<div class="modal-section">
+					<h3>Biography</h3>
+					${bioHtml}
+				</div>
+				<div class="modal-actions">
+					<button onclick="closePersonModal()" class="btn btn-ghost">Close</button>
+				</div>`;
+			document.getElementById('personModal').classList.add('active');
+		}
+
+		function closePersonModal() {
+			document.getElementById('personModal').classList.remove('active');
+		}
+
+		renderTeam();
 
 		// Close mobile menu when clicking outside
 		document.addEventListener('click', function(e) {
